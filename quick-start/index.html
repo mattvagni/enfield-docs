@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title></title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/enfield-docs/styles.css" media="screen">
+    <link rel="stylesheet" href="/styles.css" media="screen">
 </head>
 <body>
 <div class="layout">
 
     <div class="layout__header-bar">
         <div class="layout__header-bar-content">
-            <a href="/enfield-docs" class="layout__header-bar-logo">enfield</a>
+            <a href="" class="layout__header-bar-logo">enfield</a>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/" class="menu-items__link ">
+                            <a href="/" class="menu-items__link ">
                                 What is Enfield?
                             </a>
 
@@ -39,10 +39,14 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/quick-start/" class="menu-items__link menu-items__link--active">
+                            <a href="/quick-start/" class="menu-items__link menu-items__link--active">
                                 Quick Start
                             </a>
 
+                            
+                                <ul class="headings-submenu">
+                                    
+                                </ul>
                             
                         </li>
                     
@@ -53,7 +57,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/command-line-options/" class="menu-items__link ">
+                            <a href="/command-line-options/" class="menu-items__link ">
                                 Command Line Options
                             </a>
 
@@ -77,7 +81,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/themes/creating-a-theme/" class="menu-items__link ">
+                            <a href="/themes/creating-a-theme/" class="menu-items__link ">
                                 Creating A Theme
                             </a>
 
@@ -91,7 +95,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/themes/template-variables/" class="menu-items__link ">
+                            <a href="/themes/template-variables/" class="menu-items__link ">
                                 Template Variables
                             </a>
 
@@ -115,7 +119,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/deploying/" class="menu-items__link ">
+                            <a href="/deploying/" class="menu-items__link ">
                                 Deploying
                             </a>
 
@@ -149,13 +153,13 @@
 <pre><code class="lang-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&#39;enfield&#39;</span>
 <span class="l-Scalar-Plain">theme</span><span class="p-Indicator">:</span> <span class="s">&#39;theme/&#39;</span>
 <span class="l-Scalar-Plain">pages</span><span class="p-Indicator">:</span>
-    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Why You Need A Pet</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">docs/home.md</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Why You Need A Pet</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/home.md&#39;</span>
     <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Mammals</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">How Dogs Work</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">docs/dogs.md</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">How To Setup a Cat</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">docs/cats.md</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">How Dogs Work</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/dogs.md&#39;</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">How To Setup a Cat</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/cats.md&#39;</span>
     <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Other Animals</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Hamsters</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">docs/hamsters.md</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Bunnies</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">docs/bunnies.md</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Hamsters</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/hamsters.md&#39;</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Bunnies</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/bunnies.md&#39;</span>
 </pre></div>
 
 </code></pre>
@@ -167,24 +171,19 @@
 
 </code></pre>
 <p>This will watch for file changes and rebuild your site as you make changes.</p>
-<p>For more info on the command line options just run:</p>
-<pre><code class="lang-bash"><div class="highlight"><pre>enfield --help
-</pre></div>
-
-</code></pre>
 
 
             <div class="pagination">
                 
                     <div class="pagination__item pagination__item--previous">
                         <div class="pagination__item-label">Previous</div>
-                        <a href=/enfield-docs/>What is Enfield?</a>
+                        <a href=/>What is Enfield?</a>
                     </div>
                 
                 
                     <div class="pagination__item pagination__item--next">
                         <div class="pagination__item-label">Next</div>
-                        <a href=/enfield-docs/command-line-options/>Command Line Options</a>
+                        <a href=/command-line-options/>Command Line Options</a>
                     </div>
                 
             </div>
