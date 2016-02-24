@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/styles.css" media="screen">
+</head>
+<body>
+<div class="layout">
+
+    <div class="layout__header-bar">
+        <div class="layout__header-bar-content">
+            <div class="layout__header-bar-logo">enfield</div>
+        </div>
+    </div>
+
+    <div class="layout__main">
+
+        <div class="layout__menu">
+            <ul class="menu-items">
+
+
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/" class="menu-items__link menu-items__link--active ">
+                                What is Enfield?
+                            </a>
+
+                                <ul class="headings-submenu">
+                                    <li class="headings-submenu__item">
+                                        <a href="#installation" class="headings-submenu__link headings-submenu__link--l2">
+                                            Installation
+                                        </a>
+                                    </li>
+                                    <li class="headings-submenu__item">
+                                        <a href="#jekyll" class="headings-submenu__link headings-submenu__link--l2">
+                                            Jekyll
+                                        </a>
+                                    </li>
+                                </ul>
+                        </li>
+
+
+
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/quick-start/" class="menu-items__link ">
+                                Quick Start
+                            </a>
+
+                        </li>
+
+
+
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/command-line-options/" class="menu-items__link ">
+                                Command Line Options
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-items__item menu-items__section-title">
+                            Themes
+                        </li>
+
+
+
+
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/themes/creating-a-theme/" class="menu-items__link ">
+                                Creating A Theme
+                            </a>
+
+                        </li>
+
+
+
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/themes/template-variables/" class="menu-items__link ">
+                                Template Variables
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-items__item menu-items__section-title">
+                            
+                        </li>
+
+
+
+
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/deploying/" class="menu-items__link ">
+                                Deploying
+                            </a>
+
+                        </li>
+
+            </ul>
+        </div>
+
+
+        <div class="layout__content">
+            <h1>What is Enfield?</h1>
+            <p>Enfield is a static-site generator based on pages, it&#39;s designed for docs.</p>
+<p>You can write your docs in markdown and use your own the theme to customize virtually every aspect of your docs. You can specify the order of the pages and structure them into sections so they are more readable.</p>
+<p>Like with any other static site generator, you can deploy it to basically anything since the output is just a bunch of static files.</p>
+<p>These docs are generated using enfield.</p>
+<h2 id="installation">Installation</h2><p>Assuming you already have node and npm installed:</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>npm install -g enfield
+</pre></div>
+
+</code></pre>
+<p>You don&#39;t have to install it globally but this is probably the easiest option if you just want to try it out.</p>
+<h2 id="jekyll">Jekyll</h2><p>Given how nicely github integrates with github it&#39;s super tempting to try and use Jekyll for small page based sites such as API docs.</p>
+<p>However, since it was built for creating blogs it&#39;s super awkward if you just want a list of pages you define in markdown. It&#39;s definitely possible but just feels a bit over-the-top for a simple docs site.</p>
+
+
+            <div class="pagination">
+                        <div class="pagination__item pagination__item--next">
+                            <div class="pagination__item-label">Next</div>
+                            <a href=&#x2F;quick-start&#x2F;>Quick Start</a>
+                        </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>

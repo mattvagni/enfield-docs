@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/styles.css" media="screen">
+</head>
+<body>
+<div class="layout">
+
+    <div class="layout__header-bar">
+        <div class="layout__header-bar-content">
+            <div class="layout__header-bar-logo">enfield</div>
+        </div>
+    </div>
+
+    <div class="layout__main">
+
+        <div class="layout__menu">
+            <ul class="menu-items">
+
+
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/" class="menu-items__link ">
+                                What is Enfield?
+                            </a>
+
+                        </li>
+
+
+
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/quick-start/" class="menu-items__link menu-items__link--active ">
+                                Quick Start
+                            </a>
+
+                                <ul class="headings-submenu">
+                                </ul>
+                        </li>
+
+
+
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/command-line-options/" class="menu-items__link ">
+                                Command Line Options
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-items__item menu-items__section-title">
+                            Themes
+                        </li>
+
+
+
+
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/themes/creating-a-theme/" class="menu-items__link ">
+                                Creating A Theme
+                            </a>
+
+                        </li>
+
+
+
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/themes/template-variables/" class="menu-items__link ">
+                                Template Variables
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-items__item menu-items__section-title">
+                            
+                        </li>
+
+
+
+
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/deploying/" class="menu-items__link ">
+                                Deploying
+                            </a>
+
+                        </li>
+
+            </ul>
+        </div>
+
+
+        <div class="layout__content">
+            <h1>Quick Start</h1>
+            <p>In order for Enfield to know how to build your site you&#39;ll need to specify a <code>.yml</code> config file.</p>
+<p>Your config can be called whatever you like. The default that Enfield will look like is <code>config.yml</code> in the root of your project.</p>
+<p>You will also need a theme. You can <a href="TODO">download a sample theme from github</a> to get going for now and paste it into your project.</p>
+<p>Additionally you&#39;ll need some markdown files. These too can be anywhere you like.</p>
+<p>Assuming your folder looks like:</p>
+<pre><code class="lang-yaml"><div class="highlight"><pre><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">docs/</span>
+    <span class="l-Scalar-Plain">- home.md</span>
+    <span class="l-Scalar-Plain">- dogs.md</span>
+    <span class="l-Scalar-Plain">- cats.md</span>
+    <span class="l-Scalar-Plain">- hamsters.md</span>
+    <span class="l-Scalar-Plain">- bunnies.md</span>
+<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">config.yml</span>
+</pre></div>
+
+</code></pre>
+<p>You&#39;ll need to specify the structure of your site in your <code>config.yaml</code> like so:</p>
+<pre><code class="lang-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&#39;enfield&#39;</span>
+<span class="l-Scalar-Plain">theme</span><span class="p-Indicator">:</span> <span class="s">&#39;theme/&#39;</span>
+<span class="l-Scalar-Plain">pages</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Why You Need A Pet</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">docs/home.md</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Mammals</span><span class="p-Indicator">:</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">How Dogs Work</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">docs/dogs.md</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">How To Setup a Cat</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">docs/cats.md</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Other Animals</span><span class="p-Indicator">:</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Hamsters</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">docs/hamsters.md</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Bunnies</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">docs/bunnies.md</span>
+</pre></div>
+
+</code></pre>
+<p>For each page you have to specify the location of the markdown file that corresponds to that page.</p>
+<p>If you want to break up your pages in sections you can just nest a list of pages like above.</p>
+<p>To see what it looks like, run:</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>enfield --serve --watch
+</pre></div>
+
+</code></pre>
+<p>This will watch for file changes and rebuild your site as you make changes.</p>
+<p>For more info on the command line options just run:</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>enfield --help
+</pre></div>
+
+</code></pre>
+
+
+            <div class="pagination">
+                        <div class="pagination__item pagination__item--previous">
+                            <div class="pagination__item-label">Previous</div>
+                            <a href=&#x2F;>What is Enfield?</a>
+                        </div>
+                        <div class="pagination__item pagination__item--next">
+                            <div class="pagination__item-label">Next</div>
+                            <a href=&#x2F;command-line-options&#x2F;>Command Line Options</a>
+                        </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>
