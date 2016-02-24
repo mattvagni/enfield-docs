@@ -22,13 +22,13 @@ You'll need to specify the structure of your site in your `config.yaml` like so:
 title: 'enfield'
 theme: 'theme/'
 pages:
-    - Why You Need A Pet: docs/home.md
+    - Why You Need A Pet: 'docs/home.md'
     - Mammals:
-        - How Dogs Work: docs/dogs.md
-        - How To Setup a Cat: docs/cats.md
+        - How Dogs Work: 'docs/dogs.md'
+        - How To Setup a Cat: 'docs/cats.md'
     - Other Animals:
-        - Hamsters: docs/hamsters.md
-        - Bunnies: docs/bunnies.md
+        - Hamsters: 'docs/hamsters.md'
+        - Bunnies: 'docs/bunnies.md'
 ```
 For each page you have to specify the location of the markdown file that corresponds to that page.
 
@@ -39,8 +39,3 @@ To see what it looks like, run:
 enfield --serve --watch
 ```
 This will watch for file changes and rebuild your site as you make changes.
-
-For more info on the command line options just run:
-```bash
-enfield --help
-```

@@ -1,9 +1,6 @@
 ### `--config, -c`
 The location of your config relative to where you are running the command from.
 
-### `--outputDir, -o`
-The directory to which you'd like to build your site too. By default enfield will build your site to `./_site/`.
-
 ### `--watch, -w`
 Whether you would like for enfield to watch for changes and rebuild or not. Enfield watches:
 - Your config file
