@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ site_title }}</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/styles.css" media="screen">
+</head>
+<body>
+<div class="layout">
+
+    <div class="layout__header-bar">
+        <div class="layout__header-bar-content">
+            <div class="layout__header-bar-logo">{{ title }}</div>
+        </div>
+    </div>
+
+    <div class="layout__main">
+
+        <div class="layout__menu">
+            <ul class="menu-items">
+                {{# menuItems }}
+
+                    {{# isSectionTitle }}
+                        <li class="menu-items__item menu-items__section-title">
+                            {{ title }}
+                        </li>
+                    {{/ isSectionTitle }}
+
+                    {{# isPage }}
+                        <li class="menu-items__item menu-items__page">
+                            <a href="{{{ url }}}" class="menu-items__link {{# isActive}}menu-items__link--active {{/ isActive}}">
+                                {{ title }}
+                            </a>
+
+                            {{# isActive }}
+                                <ul class="headings-submenu">
+                                {{# headings }}
+                                    <li class="headings-submenu__item">
+                                        <a href="{{anchor}}" class="headings-submenu__link headings-submenu__link--l{{level}}">
+                                            {{heading}}
+                                        </a>
+                                    </li>
+                                {{/ headings }}
+                                </ul>
+                            {{/ isActive }}
+                        </li>
+                    {{/ isPage }}
+
+                {{/ menuItems }}
+            </ul>
+        </div>
+
+
+        <div class="layout__content">
+            <h1>{{ page.title }}</h1>
+            {{{ page.content }}}
+
+            <div class="pagination">
+                {{# pagination }}
+                    {{# previousPage}}
+                        <div class="pagination__item pagination__item--previous">
+                            <div class="pagination__item-label">Previous</div>
+                            <a href={{url}}>{{title}}</a>
+                        </div>
+                    {{/ previousPage}}
+                    {{# nextPage}}
+                        <div class="pagination__item pagination__item--next">
+                            <div class="pagination__item-label">Next</div>
+                            <a href={{url}}>{{title}}</a>
+                        </div>
+                    {{/ nextPage}}
+                {{/ pagination }}
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>

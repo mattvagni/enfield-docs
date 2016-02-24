@@ -1,0 +1,10 @@
+title: 'enfield'
+theme: 'theme/'
+pages:
+    - What is Enfield?: docs/home.md
+    - Quick Start: docs/quick-start.md
+    - Command Line Options: docs/cli-options.md
+    - Themes:
+        - Creating A Theme: docs/creating-a-theme.md
+        - Template Variables: docs/template-variables.md
+    - Deploying: docs/deploying.md
