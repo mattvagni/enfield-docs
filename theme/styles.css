@@ -167,9 +167,16 @@ em {
 .layout__header-bar-logo {
     color: #FFF;
     font-weight: 500;
-    line-height: 58px;
+    line-height: 60px;
     font-size: 28px;
-    padding-top: 2px;
+    position: relative;
+    top: 1px;
+    text-decoration: none;
+}
+
+.layout__header-bar-logo:hover {
+    color: #000;
+    opacity: 0.3;
 }
 
 .layout__menu {
