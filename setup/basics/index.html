@@ -11,7 +11,7 @@
 
     <div class="layout__header-bar">
         <div class="layout__header-bar-content">
-            <a href="" class="layout__header-bar-logo">enfield</a>
+            <a href="" class="layout__header-bar-logo">Enfield Docs</a>
         </div>
     </div>
 
@@ -50,15 +50,45 @@
                 
 
                     
+                        <li class="menu-items__item menu-items__section-title">
+                            Setup
+                        </li>
+                    
+
+                    
+
+                
+
+                    
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/command-line-options/" class="menu-items__link menu-items__link--active">
+                            <a href="/setup/command-line-options/" class="menu-items__link ">
                                 Command Line Options
                             </a>
 
                             
+                        </li>
+                    
+
+                
+
+                    
+
+                    
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/setup/basics/" class="menu-items__link menu-items__link--active">
+                                Basics
+                            </a>
+
+                            
                                 <ul class="headings-submenu">
+                                    
+                                        <li class="headings-submenu__item">
+                                            <a href="#using-subpages" class="headings-submenu__link">
+                                                Using Subpages
+                                            </a>
+                                        </li>
                                     
                                 </ul>
                             
@@ -133,24 +163,41 @@
 
 
         <div class="layout__content">
-            <h1>Command Line Options</h1>
-            <h3 id="-code-config-c-code-"><code>--config, -c</code></h3><p>The location of your config relative to where you are running the command from.</p>
-<h3 id="-code-watch-w-code-"><code>--watch, -w</code></h3><p>Whether you would like for enfield to watch for changes and rebuild or not. Enfield watches:</p>
-<ul>
-<li>Your config file</li>
-<li>Your entire theme directory</li>
-<li>Any markdown files you specify in your config.</li>
-</ul>
-<h3 id="-code-serve-s-code-"><code>--serve, -s</code></h3><p>Whether you would like for enfield to &#39;serve&#39; your site locally.</p>
-<h3 id="-code-port-p-code-"><code>--port, -p</code></h3><p>The port on which to serve your site. This only has effect if you are using <code>--serve</code></p>
-<h3 id="-code-debug-d-code-"><code>--debug, -d</code></h3><p>Turns on debug logging, probably not useful at all.</p>
+            <h1>Basics</h1>
+            <p>These are the basic config options.</p>
+<pre><code class="lang-YAML"><div class="highlight"><pre><span class="c1"># This is the title of your site. This is most commonly used as the &lt;title&gt; of your site and for logging.</span>
+<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&#39;Enfield</span><span class="nv"> </span><span class="s">Docs&#39;</span>
+
+<span class="c1"># This is the folder to your theme.</span>
+<span class="l-Scalar-Plain">theme</span><span class="p-Indicator">:</span> <span class="s">&#39;theme/&#39;</span>
+
+<span class="c1"># This defines the structure of your site &amp; which markdown file each page maps to.</span>
+<span class="l-Scalar-Plain">pages</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Page Title</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-a.md&#39;</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Another Page Title</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-b.md&#39;</span>
+</pre></div>
+
+</code></pre>
+<p>Page title&#39;s will be automatically extracted and exposed to your theme. No need to put them here.</p>
+<h2 id="using-subpages">Using Subpages</h2><p>If you want, you can break your pages into sections.
+You can do this by nesting pages like so:</p>
+<pre><code class="lang-YAML"><div class="highlight"><pre><span class="l-Scalar-Plain">pages</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Page Title</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-a.md&#39;</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Another Page Title</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-b.md&#39;</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Section Title</span><span class="p-Indicator">:</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Subpage</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-c.md&#39;</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Another Subpage</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-c.md&#39;</span>
+</pre></div>
+
+</code></pre>
+<p>Pages can only go one level deep like above.</p>
 
 
             <div class="pagination">
                 
                     <div class="pagination__item pagination__item--previous">
                         <div class="pagination__item-label">Previous</div>
-                        <a href=/quick-start/>Quick Start</a>
+                        <a href=/setup/command-line-options/>Command Line Options</a>
                     </div>
                 
                 

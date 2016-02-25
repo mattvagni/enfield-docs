@@ -51,7 +51,7 @@
 
                     
                         <li class="menu-items__item menu-items__section-title">
-                            Setup &amp; Usage
+                            Docs
                         </li>
                     
 
@@ -63,10 +63,26 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/setup-usage/command-line-options/" class="menu-items__link ">
+                            <a href="/docs/command-line-options/" class="menu-items__link menu-items__link--active">
                                 Command Line Options
                             </a>
 
+                            
+                                <ul class="headings-submenu">
+                                    
+                                        <li class="headings-submenu__item">
+                                            <a href="#building-your-docs" class="headings-submenu__link">
+                                                Building your docs
+                                            </a>
+                                        </li>
+                                    
+                                        <li class="headings-submenu__item">
+                                            <a href="#publishing-to-github" class="headings-submenu__link">
+                                                Publishing to Github
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
                             
                         </li>
                     
@@ -77,8 +93,8 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/setup-usage/config/" class="menu-items__link ">
-                                Config
+                            <a href="/docs/basics/" class="menu-items__link ">
+                                Basics
                             </a>
 
                             
@@ -139,14 +155,10 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/deploying/" class="menu-items__link menu-items__link--active">
+                            <a href="/deploying/" class="menu-items__link ">
                                 Deploying
                             </a>
 
-                            
-                                <ul class="headings-submenu">
-                                    
-                                </ul>
                             
                         </li>
                     
@@ -157,17 +169,47 @@
 
 
         <div class="layout__content">
-            <h1>Deploying</h1>
-            <p>Home</p>
+            <h1>Command Line Options</h1>
+            <p>Enfield is a command line tool essentially.</p>
+<h2 id="building-your-docs">Building your docs</h2><pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span>enfield build
+
+<span class="c"># To watch for changes or serve your site:</span>
+<span class="c"># enfield build --watch --serve</span>
+</pre></div>
+
+</code></pre>
+<h4 id="-code-config-c-code-"><code>--config, -c</code></h4><p>The location of your config relative to where you are running the command from.</p>
+<h4 id="-code-watch-w-code-"><code>--watch, -w</code></h4><p>Whether you would like for enfield to watch for changes and rebuild or not. Enfield watches:</p>
+<ul>
+<li>Your config file</li>
+<li>Your entire theme directory</li>
+<li>Any markdown files you specify in your config.</li>
+</ul>
+<h4 id="-code-outputdir-o-code-"><code>--outputDir, -o</code></h4><p>Where your like to &#39;output&#39; your docs. This is basically the folder you want your static site built into. Enfield never deletes anything just to be on the safe side.</p>
+<h4 id="-code-serve-s-code-"><code>--serve, -s</code></h4><p>Whether you would like for enfield to &#39;serve&#39; your site locally.</p>
+<h4 id="-code-port-p-code-"><code>--port, -p</code></h4><p>The port on which to serve your site. This only has effect if you are using <code>--serve</code></p>
+<h4 id="-code-debug-d-code-"><code>--debug, -d</code></h4><p>Turns on debug logging, probably not useful at all.</p>
+<h2 id="publishing-to-github">Publishing to Github</h2><pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span>enfield publish
+</pre></div>
+
+</code></pre>
+<p>This will build your site, then copy over those files into the gh-pages branch and push those changes.</p>
+<p>ProTip: If you are not using a custom domain you will need to specify a <code>base_url</code> your config.</p>
+<h4 id="-code-outputdir-o-code-"><code>--outputDir, -o</code></h4><p>Same as in the build command. It is from this folder that your GitHub pages are created.</p>
 
 
             <div class="pagination">
                 
                     <div class="pagination__item pagination__item--previous">
                         <div class="pagination__item-label">Previous</div>
-                        <a href=/themes/template-variables/>Template Variables</a>
+                        <a href=/quick-start/>Quick Start</a>
                     </div>
                 
+                
+                    <div class="pagination__item pagination__item--next">
+                        <div class="pagination__item-label">Next</div>
+                        <a href=/docs/basics/>Basics</a>
+                    </div>
                 
             </div>
         </div>

@@ -51,7 +51,7 @@
 
                     
                         <li class="menu-items__item menu-items__section-title">
-                            Setup &amp; Usage
+                            Docs
                         </li>
                     
 
@@ -63,7 +63,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/setup-usage/command-line-options/" class="menu-items__link ">
+                            <a href="/docs/command-line-options/" class="menu-items__link ">
                                 Command Line Options
                             </a>
 
@@ -77,10 +77,20 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/setup-usage/config/" class="menu-items__link ">
-                                Config
+                            <a href="/docs/basics/" class="menu-items__link menu-items__link--active">
+                                Basics
                             </a>
 
+                            
+                                <ul class="headings-submenu">
+                                    
+                                        <li class="headings-submenu__item">
+                                            <a href="#using-subpages" class="headings-submenu__link">
+                                                Using Subpages
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
                             
                         </li>
                     
@@ -139,14 +149,10 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/deploying/" class="menu-items__link menu-items__link--active">
+                            <a href="/deploying/" class="menu-items__link ">
                                 Deploying
                             </a>
 
-                            
-                                <ul class="headings-submenu">
-                                    
-                                </ul>
                             
                         </li>
                     
@@ -157,17 +163,48 @@
 
 
         <div class="layout__content">
-            <h1>Deploying</h1>
-            <p>Home</p>
+            <h1>Basics</h1>
+            <p>These are the basic config options.</p>
+<pre><code class="lang-YAML"><div class="highlight"><pre><span class="c1"># This is the title of your site. This is most commonly used as the &lt;title&gt; of your site and for logging.</span>
+<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&#39;Enfield</span><span class="nv"> </span><span class="s">Docs&#39;</span>
+
+<span class="c1"># This is the folder to your theme.</span>
+<span class="l-Scalar-Plain">theme</span><span class="p-Indicator">:</span> <span class="s">&#39;theme/&#39;</span>
+
+<span class="c1"># This defines the structure of your site &amp; which markdown file each page maps to.</span>
+<span class="l-Scalar-Plain">pages</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Page Title</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-a.md&#39;</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Another Page Title</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-b.md&#39;</span>
+</pre></div>
+
+</code></pre>
+<p>Page title&#39;s will be automatically extracted and exposed to your theme. No need to put them here.</p>
+<h2 id="using-subpages">Using Subpages</h2><p>If you want, you can break your pages into sections.
+You can do this by nesting pages like so:</p>
+<pre><code class="lang-YAML"><div class="highlight"><pre><span class="l-Scalar-Plain">pages</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Page Title</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-a.md&#39;</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Another Page Title</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-b.md&#39;</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Section Title</span><span class="p-Indicator">:</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Subpage</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-c.md&#39;</span>
+        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Another Subpage</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-c.md&#39;</span>
+</pre></div>
+
+</code></pre>
+<p>Pages can only go one level deep like above.</p>
 
 
             <div class="pagination">
                 
                     <div class="pagination__item pagination__item--previous">
                         <div class="pagination__item-label">Previous</div>
-                        <a href=/themes/template-variables/>Template Variables</a>
+                        <a href=/docs/command-line-options/>Command Line Options</a>
                     </div>
                 
+                
+                    <div class="pagination__item pagination__item--next">
+                        <div class="pagination__item-label">Next</div>
+                        <a href=/themes/creating-a-theme/>Creating A Theme</a>
+                    </div>
                 
             </div>
         </div>
