@@ -14,6 +14,7 @@ Assuming your folder looks like:
     - cats.md
     - hamsters.md
     - bunnies.md
+- theme/
 - config.yml
 ```
 
@@ -36,6 +37,6 @@ If you want to break up your pages in sections you can just nest a list of pages
 
 To see what it looks like, run:
 ```bash
-enfield --serve --watch
+$ enfield --serve --watch
 ```
 This will watch for file changes and rebuild your site as you make changes.

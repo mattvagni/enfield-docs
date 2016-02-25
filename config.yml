@@ -1,15 +1,11 @@
-title: 'enfield'
+title: 'Enfield Docs'
 theme: 'theme/'
 pages:
     - What is Enfield?: 'docs/home.md'
     - Quick Start: 'docs/quick-start.md'
-    - Command Line Options: 'docs/cli-options.md'
+    - Setup & Usage:
+        - Command Line Options: 'docs/cli-options.md'
+        - Configuration: 'docs/config.md'
     - Themes:
         - Creating A Theme: 'docs/creating-a-theme.md'
         - Template Variables: 'docs/template-variables.md'
-    - Deploying: 'docs/deploying.md'
-
-# Any other keys you specify here (besides the above) will be passed to your
-# template. These can be useful for global stuff such as github links etc.
-# They have no effect on enfield itself.
-base_path: '/enfield-docs'

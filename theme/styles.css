@@ -136,6 +136,10 @@ li {
     margin-bottom: 5px;
 }
 
+em {
+    font-weight: 500;
+}
+
 
 /**
  * layout component
