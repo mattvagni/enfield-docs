@@ -6,7 +6,7 @@ Like with any other static site generator, you can deploy it to basically anythi
 
 It has built-in support for publishing to github-pages to make it super easy.
 
-These docs are generated using enfield, [check them out](https://github.com/mattvagni/enfield-docs).
+These docs are generated using enfield, [check them out on Github](https://github.com/mattvagni/enfield-docs).
 
 ### Installation
 Assuming you already have node and npm installed:

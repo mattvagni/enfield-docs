@@ -5,10 +5,33 @@ A theme is essentially just a folder with a template that defines the structure 
 You specify where the theme you'd like to use in your config.
 
 ## Defining a template
-Your theme must define a file called `template.html` this is the template that is used to render your site.
+Your theme must define a file called `template.html` this is the template that is used to render your site. Every page is rendered using the same template.
 
-Templates are rendered using [Swig] as a template language. This is nearly identical to what Jekyll uses.
+Templates are rendered using [Swig](http://paularmstrong.github.io/swig/) as a template language. This is nearly identical to what Jekyll uses with some slight differences in terms of what filters are available etc.
 
-Every page is rendered using the same tempalte.
+If you want to see an example template check out the [sample theme](https://github.com/mattvagni/enfield-docs/tree/master/theme)
 
-Checking the [sample]
+## Static files
+Any files besides the template in your theme are copied over in the same folder structure to the root of your built site.
+
+So if your theme folder looks like so:
+```bash
+theme/
+    - template.html
+    - css/
+        - styles.css
+    - js/
+        - scripts.js
+```
+When you build your site it will copy over the `css` and `js` directory.
+
+## Urls in your theme
+In your theme if you want to refer to a static file or a post url you have to use the `url` filter.
+
+For example, given the above theme structure, in your theme you will have to do this if you want to include a the javascript file:
+```jinja
+<script type="text/javascript" src="{{ '/js/scripts.js'|url }}"></script>
+```
+This will ensure that if you specified a `base_url` in your config it is respected.
+
+Don't do this on external urls as it will break theme. Only to links 'internally' within your site.
