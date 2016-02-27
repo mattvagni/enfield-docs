@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Enfield</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="[object Object]" media="screen">
+    <link rel="stylesheet" href="/enfield-docs/styles.css" media="screen">
 </head>
 <body>
 <div class="layout">
 
     <div class="layout__header-bar">
         <div class="layout__header-bar-content">
-            <a href="[object Object]" class="layout__header-bar-logo">Enfield</a>
+            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield v1</a>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="[object Object]" class="menu-items__link ">
+                            <a href="/enfield-docs/" class="menu-items__link ">
                                 What is Enfield?
                             </a>
 
@@ -39,7 +39,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="[object Object]" class="menu-items__link ">
+                            <a href="/enfield-docs/quick-start/" class="menu-items__link ">
                                 Quick Start
                             </a>
 
@@ -63,7 +63,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="[object Object]" class="menu-items__link menu-items__link--active">
+                            <a href="/enfield-docs/setup-usage/command-line-options/" class="menu-items__link menu-items__link--active">
                                 Command Line Options
                             </a>
 
@@ -71,14 +71,14 @@
                                 <ul class="headings-submenu">
                                     
                                         <li class="headings-submenu__item">
-                                            <a href="[object Object]" class="headings-submenu__link">
-                                                Building your docs
+                                            <a href="function anchor() { [native code] }" class="headings-submenu__link">
+                                                
                                             </a>
                                         </li>
                                     
                                         <li class="headings-submenu__item">
-                                            <a href="[object Object]" class="headings-submenu__link">
-                                                Publishing to Github
+                                            <a href="function anchor() { [native code] }" class="headings-submenu__link">
+                                                
                                             </a>
                                         </li>
                                     
@@ -93,7 +93,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="[object Object]" class="menu-items__link ">
+                            <a href="/enfield-docs/setup-usage/configuration/" class="menu-items__link ">
                                 Configuration
                             </a>
 
@@ -117,7 +117,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="[object Object]" class="menu-items__link ">
+                            <a href="/enfield-docs/themes/creating-a-theme/" class="menu-items__link ">
                                 Creating A Theme
                             </a>
 
@@ -131,7 +131,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="[object Object]" class="menu-items__link ">
+                            <a href="/enfield-docs/themes/template-variables/" class="menu-items__link ">
                                 Template Variables
                             </a>
 
@@ -155,37 +155,37 @@
 </pre></div>
 
 </code></pre>
-<h4 id="-code-config-c-code-"><code>--config, -c</code></h4><p>The location of your config relative to where you are running the command from.</p>
-<h4 id="-code-watch-w-code-"><code>--watch, -w</code></h4><p>Whether you would like for enfield to watch for changes and rebuild or not. Enfield watches:</p>
+<h4 id="-config-c"><code>--config, -c</code></h4><p>The location of your config relative to where you are running the command from.</p>
+<h4 id="-watch-w"><code>--watch, -w</code></h4><p>Whether you would like for enfield to watch for changes and rebuild or not. Enfield watches:</p>
 <ul>
 <li>Your config file</li>
 <li>Your entire theme directory</li>
 <li>Any markdown files you specify in your config.</li>
 </ul>
-<h4 id="-code-outputdir-o-code-"><code>--outputDir, -o</code></h4><p>Where your like to &#39;output&#39; your docs. This is basically the folder you want your static site built into. Enfield <em>never deletes anything</em> just to be on the safe side.</p>
-<h4 id="-code-serve-s-code-"><code>--serve, -s</code></h4><p>Whether you would like for enfield to &#39;serve&#39; your site locally.</p>
-<h4 id="-code-port-p-code-"><code>--port, -p</code></h4><p>The port on which to serve your site. This only has effect if you are using <code>--serve</code></p>
-<h4 id="-code-debug-d-code-"><code>--debug, -d</code></h4><p>Turns on debug logging, probably not useful at all.</p>
+<h4 id="-outputdir-o"><code>--outputDir, -o</code></h4><p>Where your like to &#39;output&#39; your docs. This is basically the folder you want your static site built into. Enfield <em>never deletes anything</em> just to be on the safe side.</p>
+<h4 id="-serve-s"><code>--serve, -s</code></h4><p>Whether you would like for enfield to &#39;serve&#39; your site locally.</p>
+<h4 id="-port-p"><code>--port, -p</code></h4><p>The port on which to serve your site. This only has effect if you are using <code>--serve</code></p>
+<h4 id="-debug-d"><code>--debug, -d</code></h4><p>Turns on debug logging, probably not useful at all.</p>
 <h2 id="publishing-to-github">Publishing to Github</h2><pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span>enfield publish
 </pre></div>
 
 </code></pre>
 <p>This will build your site, then copy over those files into the gh-pages branch and push those changes.</p>
 <p><em>ProTip</em>: If you are not using a custom domain you will need to specify a <code>base_url</code> your config.</p>
-<h4 id="-code-outputdir-o-code-"><code>--outputDir, -o</code></h4><p>Same as in the build command. It is from this folder that your GitHub pages are created.</p>
+<h4 id="-outputdir-o"><code>--outputDir, -o</code></h4><p>Same as in the build command. It is from this folder that your GitHub pages are created.</p>
 
 
             <div class="pagination">
                 
                     <div class="pagination__item pagination__item--previous">
                         <div class="pagination__item-label">Previous</div>
-                        <a href=[object Object]>Quick Start</a>
+                        <a href=/enfield-docs/quick-start/>Quick Start</a>
                     </div>
                 
                 
                     <div class="pagination__item pagination__item--next">
                         <div class="pagination__item-label">Next</div>
-                        <a href=[object Object]>Configuration</a>
+                        <a href=/enfield-docs/setup-usage/configuration/>Configuration</a>
                     </div>
                 
             </div>
