@@ -11,7 +11,7 @@
 
     <div class="layout__header-bar">
         <div class="layout__header-bar-content">
-            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield v1</a>
+            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield v</a>
         </div>
     </div>
 
@@ -32,12 +32,6 @@
                             
                         </li>
                     
-
-                
-
-                    
-
-                    
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/quick-start/" class="menu-items__link ">
                                 Quick Start
@@ -56,29 +50,17 @@
                     
 
                     
-
-                
-
-                    
-
-                    
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/setup-usage/command-line-options/" class="menu-items__link ">
-                                Command Line Options
+                            <a href="/enfield-docs/setup-usage/configuration/" class="menu-items__link ">
+                                Configuration
                             </a>
 
                             
                         </li>
                     
-
-                
-
-                    
-
-                    
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/setup-usage/configuration/" class="menu-items__link ">
-                                Configuration
+                            <a href="/enfield-docs/setup-usage/command-line-options/" class="menu-items__link ">
+                                Command Line Options
                             </a>
 
                             
@@ -94,14 +76,8 @@
                     
 
                     
-
-                
-
-                    
-
-                    
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/themes/creating-a-theme/" class="menu-items__link menu-items__link--active">
+                            <a href="/enfield-docs/themes/creating-a-theme/" class="menu-items__link ">
                                 Creating A Theme
                             </a>
 
@@ -130,12 +106,6 @@
                             
                         </li>
                     
-
-                
-
-                    
-
-                    
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/themes/template-variables/" class="menu-items__link ">
                                 Template Variables
@@ -157,8 +127,9 @@
 <p>A theme is essentially just a folder with a template that defines the structure of your docs and any css or javascript you&#39;d like.</p>
 <p>You specify where the theme you&#39;d like to use in your config.</p>
 <h2 id="defining-a-template">Defining a template</h2><p>Your theme must define a file called <code>template.html</code> this is the template that is used to render your site. Every page is rendered using the same template.</p>
-<p>Templates are rendered using <a href="http://paularmstrong.github.io/swig/">Swig</a> as a template language. This is nearly identical to what Jekyll uses with some slight differences in terms of what filters are available etc.</p>
-<p>If you want to see an example template check out the <a href="https://github.com/mattvagni/enfield-docs/tree/master/theme">sample theme</a></p>
+<p>Templates are rendered using <a href="http://paularmstrong.github.io/swig/" title="null">Swig</a> as a template language. This is nearly identical to what Jekyll uses with some slight differences in terms of what filters are available etc.</p>
+<p>If you want to see an example template check out the <a href="https://github.com/mattvagni/enfield-docs/tree/master/theme" title="null">sample theme</a></p>
+<p>To see what data you have available in your template check out the available <a href="/enfield-docs/themes/template-variables/" title="null">template variables</a>.</p>
 <h2 id="static-files">Static files</h2><p>Any files besides the template in your theme are copied over in the same folder structure to the root of your built site.</p>
 <p>So if your theme folder looks like so:</p>
 <pre><code class="lang-bash"><div class="highlight"><pre>theme/
@@ -171,21 +142,21 @@
 
 </code></pre>
 <p>When you build your site it will copy over the <code>css</code> and <code>js</code> directory.</p>
-<h2 id="urls-in-your-theme">Urls in your theme</h2><p>In your theme if you want to refer to a static file or a post url you have to use the <code>url</code> filter.</p>
+<h2 id="urls-in-your-theme">Urls in your theme</h2><p>In your theme if you want to refer to a static file or a page url you have to use the <code>url</code> filter.</p>
 <p>For example, given the above theme structure, in your theme you will have to do this if you want to include a the javascript file:</p>
 <pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;script type=&quot;text/javascript&quot; src=&quot;</span><span class="cp">{{</span> <span class="s1">&#39;/js/scripts.js&#39;</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">&quot;&gt;&lt;/script&gt;</span>
 </pre></div>
 
 </code></pre>
 <p>This will ensure that if you specified a <code>base_url</code> in your config it is respected.</p>
-<p>Don&#39;t do this on external urls as it will break theme. Only to links &#39;internally&#39; within your site.</p>
+<p>Don&#39;t do this on external urls as it will break them, only to internal links within your site.</p>
 
 
             <div class="pagination">
                 
                     <div class="pagination__item pagination__item--previous">
                         <div class="pagination__item-label">Previous</div>
-                        <a href=/enfield-docs/setup-usage/configuration/>Configuration</a>
+                        <a href=/enfield-docs/setup-usage/command-line-options/>Command Line Options</a>
                     </div>
                 
                 

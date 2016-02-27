@@ -11,7 +11,7 @@
 
     <div class="layout__header-bar">
         <div class="layout__header-bar-content">
-            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield v1</a>
+            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield v</a>
         </div>
     </div>
 
@@ -32,12 +32,6 @@
                             
                         </li>
                     
-
-                
-
-                    
-
-                    
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/quick-start/" class="menu-items__link ">
                                 Quick Start
@@ -56,14 +50,16 @@
                     
 
                     
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/enfield-docs/setup-usage/configuration/" class="menu-items__link ">
+                                Configuration
+                            </a>
 
-                
-
-                    
-
+                            
+                        </li>
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/setup-usage/command-line-options/" class="menu-items__link menu-items__link--active">
+                            <a href="/enfield-docs/setup-usage/command-line-options/" class="menu-items__link ">
                                 Command Line Options
                             </a>
 
@@ -90,29 +86,9 @@
                 
 
                     
-
-                    
-                        <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/setup-usage/configuration/" class="menu-items__link ">
-                                Configuration
-                            </a>
-
-                            
-                        </li>
-                    
-
-                
-
-                    
                         <li class="menu-items__item menu-items__section-title">
                             Themes
                         </li>
-                    
-
-                    
-
-                
-
                     
 
                     
@@ -123,12 +99,6 @@
 
                             
                         </li>
-                    
-
-                
-
-                    
-
                     
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/themes/template-variables/" class="menu-items__link ">
@@ -155,16 +125,17 @@
 </pre></div>
 
 </code></pre>
-<h4 id="-config-c"><code>--config, -c</code></h4><p>The location of your config relative to where you are running the command from.</p>
+<h4 id="-config-c"><code>--config, -c</code></h4><p>The location of your config relative to where you are running the command from. If you don&#39;t explicitly define a config location Enfield will look for <code>config.yml</code> in the root of your project.</p>
 <h4 id="-watch-w"><code>--watch, -w</code></h4><p>Whether you would like for enfield to watch for changes and rebuild or not. Enfield watches:</p>
 <ul>
 <li>Your config file</li>
 <li>Your entire theme directory</li>
 <li>Any markdown files you specify in your config.</li>
+<li>Any files you manually specified you&#39;d like to include in your config.</li>
 </ul>
-<h4 id="-outputdir-o"><code>--outputDir, -o</code></h4><p>Where your like to &#39;output&#39; your docs. This is basically the folder you want your static site built into. Enfield <em>never deletes anything</em> just to be on the safe side.</p>
+<h4 id="-outputdir-o"><code>--outputDir, -o</code></h4><p>Where your like to &#39;output&#39; your docs. This is basically the folder you want your static site built into. Enfield deletes this folder before every build.</p>
 <h4 id="-serve-s"><code>--serve, -s</code></h4><p>Whether you would like for enfield to &#39;serve&#39; your site locally.</p>
-<h4 id="-port-p"><code>--port, -p</code></h4><p>The port on which to serve your site. This only has effect if you are using <code>--serve</code></p>
+<h4 id="-port-p"><code>--port, -p</code></h4><p>The port on which to serve your site. By default the port is 3000. This only has effect if you are using <code>--serve</code></p>
 <h4 id="-debug-d"><code>--debug, -d</code></h4><p>Turns on debug logging, probably not useful at all.</p>
 <h2 id="publishing-to-github">Publishing to Github</h2><pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span>enfield publish
 </pre></div>
@@ -179,13 +150,13 @@
                 
                     <div class="pagination__item pagination__item--previous">
                         <div class="pagination__item-label">Previous</div>
-                        <a href=/enfield-docs/quick-start/>Quick Start</a>
+                        <a href=/enfield-docs/setup-usage/configuration/>Configuration</a>
                     </div>
                 
                 
                     <div class="pagination__item pagination__item--next">
                         <div class="pagination__item-label">Next</div>
-                        <a href=/enfield-docs/setup-usage/configuration/>Configuration</a>
+                        <a href=/enfield-docs/themes/creating-a-theme/>Creating A Theme</a>
                     </div>
                 
             </div>

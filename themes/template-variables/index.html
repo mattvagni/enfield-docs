@@ -11,7 +11,7 @@
 
     <div class="layout__header-bar">
         <div class="layout__header-bar-content">
-            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield v1</a>
+            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield v</a>
         </div>
     </div>
 
@@ -32,12 +32,6 @@
                             
                         </li>
                     
-
-                
-
-                    
-
-                    
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/quick-start/" class="menu-items__link ">
                                 Quick Start
@@ -56,29 +50,17 @@
                     
 
                     
-
-                
-
-                    
-
-                    
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/setup-usage/command-line-options/" class="menu-items__link ">
-                                Command Line Options
+                            <a href="/enfield-docs/setup-usage/configuration/" class="menu-items__link ">
+                                Configuration
                             </a>
 
                             
                         </li>
                     
-
-                
-
-                    
-
-                    
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/setup-usage/configuration/" class="menu-items__link ">
-                                Configuration
+                            <a href="/enfield-docs/setup-usage/command-line-options/" class="menu-items__link ">
+                                Command Line Options
                             </a>
 
                             
@@ -94,12 +76,6 @@
                     
 
                     
-
-                
-
-                    
-
-                    
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/themes/creating-a-theme/" class="menu-items__link ">
                                 Creating A Theme
@@ -108,19 +84,19 @@
                             
                         </li>
                     
-
-                
-
-                    
-
-                    
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/themes/template-variables/" class="menu-items__link menu-items__link--active">
+                            <a href="/enfield-docs/themes/template-variables/" class="menu-items__link ">
                                 Template Variables
                             </a>
 
                             
                                 <ul class="headings-submenu">
+                                    
+                                        <li class="headings-submenu__item">
+                                            <a href="/themes/template-variables/#menusections-object" class="headings-submenu__link">
+                                                menuSections Object
+                                            </a>
+                                        </li>
                                     
                                 </ul>
                             
@@ -135,8 +111,86 @@
         <div class="layout__content">
             <h1>Template Variables</h1>
 
-            <p>Your theme&#39;s templates will be rendered using the following data structure:</p>
-<pre><code class="lang-json"><div class="highlight"><pre>
+            <p>It&#39;s probably easiest to just look at the sample theme to get see what&#39;s going on.</p>
+<h2 id="menusections-object">menuSections Object</h2><p>The menu variables are as follows:</p>
+<pre><code class="lang-js"><div class="highlight"><pre><span class="p">{</span> <span class="s2">&quot;menuSection&quot;</span><span class="o">:</span> <span class="p">[{</span>
+    <span class="c1">// This is the title of this section,</span>
+    <span class="c1">// this can be an empty string if a page is not in a section.</span>
+    <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Section Title&quot;</span><span class="p">,</span>
+
+        <span class="c1">// The list of pages in this menu section</span>
+        <span class="s2">&quot;pages&quot;</span><span class="o">:</span> <span class="p">[{</span>
+            <span class="c1">// Whether this is the page the user is on:</span>
+            <span class="s2">&quot;isActive&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="c1">// The section this page is in:</span>
+            <span class="s2">&quot;section&quot;</span><span class="o">:</span> <span class="s2">&quot;Section Title&quot;</span><span class="p">,</span>
+            <span class="c1">// The page title:</span>
+            <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;The Page Title&quot;</span><span class="p">,</span>
+            <span class="c1">// The url of this page:</span>
+            <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+            <span class="c1">// The headings/titles within the page:</span>
+            <span class="c1">// (This can be empty if the page has no titles)</span>
+            <span class="s2">&quot;headings&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+
+                    <span class="s2">&quot;level&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;anchor&quot;</span><span class="o">:</span> <span class="s2">&quot;/#an-in-page-title&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;heading&quot;</span><span class="o">:</span> <span class="s2">&quot;An In Page Title&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;level&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s2">&quot;anchor&quot;</span><span class="o">:</span> <span class="s2">&quot;/#another-title&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;heading&quot;</span><span class="o">:</span> <span class="s2">&quot;Another Title&quot;</span>
+                <span class="p">},</span>
+                <span class="c1">// ... any other headings on this page.</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="c1">// Another page in this section:</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;isActive&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">&quot;section&quot;</span><span class="o">:</span> <span class="s2">&quot;Section Title&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Some Other Page&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;/some-other-page/&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;headings&quot;</span><span class="o">:</span> <span class="p">[]</span>
+        <span class="p">},</span>
+        <span class="c1">// ... any other pages in this section.</span>
+    <span class="p">]</span>
+<span class="p">},</span>
+<span class="c1">// ... any other sections in the menu</span>
+</pre></div>
+
+</code></pre>
+<p>So for example, a menu could be as simple as:</p>
+<pre><code class="lang-jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">menuSection</span> <span class="k">in</span> <span class="nv">menuSections</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">menuSection.title</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;li&gt;</span>
+<span class="x">            </span><span class="cp">{{</span> <span class="nv">menuSection.title</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">        &lt;/li&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">page</span> <span class="k">in</span> <span class="nv">menuSection.pages</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;li&gt;</span>
+<span class="x">            &lt;a  href=&quot;</span><span class="cp">{{</span> <span class="nv">page.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">&quot;</span>
+<span class="x">                class=&quot;</span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">menuItem.isActive</span> <span class="cp">%}</span><span class="x">active</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x">&quot;&gt;</span>
+<span class="x">                </span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">            &lt;/a&gt;</span>
+
+<span class="x">            </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">page.headings</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">                &lt;ul class=&quot;headings-submenu&quot;&gt;</span>
+<span class="x">                    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">heading</span> <span class="k">in</span> <span class="nv">page.headings</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">                        &lt;li&gt;</span>
+<span class="x">                            &lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">heading.anchor</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">                                </span><span class="cp">{{</span> <span class="nv">heading.heading</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">                            &lt;/a&gt;</span>
+<span class="x">                        &lt;/li&gt;</span>
+<span class="x">                    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">                &lt;/ul&gt;</span>
+<span class="x">            </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;/li&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
 </pre></div>
 
 </code></pre>

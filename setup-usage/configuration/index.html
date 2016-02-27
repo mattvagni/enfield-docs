@@ -11,7 +11,7 @@
 
     <div class="layout__header-bar">
         <div class="layout__header-bar-content">
-            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield v1</a>
+            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield v</a>
         </div>
     </div>
 
@@ -32,12 +32,6 @@
                             
                         </li>
                     
-
-                
-
-                    
-
-                    
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/quick-start/" class="menu-items__link ">
                                 Quick Start
@@ -56,11 +50,41 @@
                     
 
                     
+                        <li class="menu-items__item menu-items__page">
+                            <a href="/enfield-docs/setup-usage/configuration/" class="menu-items__link ">
+                                Configuration
+                            </a>
 
-                
-
-                    
-
+                            
+                                <ul class="headings-submenu">
+                                    
+                                        <li class="headings-submenu__item">
+                                            <a href="/setup-usage/configuration/#subpages-sections" class="headings-submenu__link">
+                                                Subpages/sections
+                                            </a>
+                                        </li>
+                                    
+                                        <li class="headings-submenu__item">
+                                            <a href="/setup-usage/configuration/#images-amp-static-assets" class="headings-submenu__link">
+                                                Images &amp;amp; static assets
+                                            </a>
+                                        </li>
+                                    
+                                        <li class="headings-submenu__item">
+                                            <a href="/setup-usage/configuration/#changing-the-base-url" class="headings-submenu__link">
+                                                Changing the base url
+                                            </a>
+                                        </li>
+                                    
+                                        <li class="headings-submenu__item">
+                                            <a href="/setup-usage/configuration/#custom-template-variables" class="headings-submenu__link">
+                                                Custom template variables
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
                     
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/setup-usage/command-line-options/" class="menu-items__link ">
@@ -74,45 +98,9 @@
                 
 
                     
-
-                    
-                        <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/setup-usage/configuration/" class="menu-items__link menu-items__link--active">
-                                Configuration
-                            </a>
-
-                            
-                                <ul class="headings-submenu">
-                                    
-                                        <li class="headings-submenu__item">
-                                            <a href="/setup-usage/configuration/#using-subpages" class="headings-submenu__link">
-                                                Using subpages
-                                            </a>
-                                        </li>
-                                    
-                                        <li class="headings-submenu__item">
-                                            <a href="/setup-usage/configuration/#changing-the-base-url" class="headings-submenu__link">
-                                                Changing the base url
-                                            </a>
-                                        </li>
-                                    
-                                </ul>
-                            
-                        </li>
-                    
-
-                
-
-                    
                         <li class="menu-items__item menu-items__section-title">
                             Themes
                         </li>
-                    
-
-                    
-
-                
-
                     
 
                     
@@ -123,12 +111,6 @@
 
                             
                         </li>
-                    
-
-                
-
-                    
-
                     
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/themes/template-variables/" class="menu-items__link ">
@@ -151,11 +133,10 @@
 <p>These are the basic config options.</p>
 <pre><code class="lang-YAML"><div class="highlight"><pre><span class="c1"># This is the title of your site.</span>
 <span class="c1"># This is most commonly used as the &lt;title&gt; of your site and for logging.</span>
-<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&#39;Enfield</span><span class="nv"> </span><span class="s">Docs&#39;</span>
+<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&#39;Your</span><span class="nv"> </span><span class="s">Site\&#39;</span><span class="l-Scalar-Plain">s Name&#39;</span>
 
 <span class="c1"># This is the folder to your theme.</span>
 <span class="l-Scalar-Plain">theme</span><span class="p-Indicator">:</span> <span class="s">&#39;theme/&#39;</span>
-
 
 <span class="c1"># This defines the structure of your site &amp; which markdown file each page maps to.</span>
 <span class="l-Scalar-Plain">pages</span><span class="p-Indicator">:</span>
@@ -165,7 +146,7 @@
 
 </code></pre>
 <p>Page headings in your markdown files will be automatically extracted and exposed to your theme so that you can use them in the navigation.</p>
-<h2 id="using-subpages">Using subpages</h2><p>If you want, you can break your pages into sections.
+<h2 id="subpages-sections">Subpages/sections</h2><p>If you want, you can break your pages into sections.
 You can do this by nesting pages like so:</p>
 <pre><code class="lang-YAML"><div class="highlight"><pre><span class="l-Scalar-Plain">pages</span><span class="p-Indicator">:</span>
     <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Page Title</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/markdown-a.md&#39;</span>
@@ -177,13 +158,39 @@ You can do this by nesting pages like so:</p>
 
 </code></pre>
 <p>Pages can only go one level deep like above.</p>
-<h2 id="changing-the-base-url">Changing the base url</h2><p>If you would like the publish your site to a sub-path such as <code>http://mysite.com/docs/</code> you will need to specify
-a base url in your config. This is prepended to all url&#39;s when your run <code>enfield publish</code>.</p>
-<p>Some valid examples:</p>
-<pre><code class="lang-YAML"><div class="highlight"><pre><span class="l-Scalar-Plain">base_url</span><span class="p-Indicator">:</span> <span class="s">&#39;/docs/&#39;</span>
+<p><em>Important:</em> Enfield will parse your markdown and expose any h1 &amp; h2s to your theme so you can have in-page anchors to your headings.</p>
+<h2 id="images-amp-static-assets">Images &amp; static assets</h2><p>If you would like to include some files additionally to the one your theme specifies you can define a list of files to copy over to the root of your built site.</p>
+<p>For example:</p>
+<pre><code class="lang-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">include</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="s">&#39;images/&#39;</span> <span class="c1"># You can specify folders</span>
+    <span class="p-Indicator">-</span> <span class="s">&#39;favicon.ico&#39;</span> <span class="c1"># or files.</span>
+</pre></div>
 
-<span class="c1"># If you would like absolute urls you can also do this:</span>
-<span class="l-Scalar-Plain">base_url</span><span class="p-Indicator">:</span> <span class="s">&#39;http://foo.com/bar/baz/&#39;</span>
+</code></pre>
+<p>That means that in your root of your build directory the <code>images/</code> folder and the <code>favicon.ico</code> will be copied.</p>
+<h2 id="changing-the-base-url">Changing the base url</h2><p>If you would like the publish your site to a sub-path such as <code>http://mysite.com/docs/</code> you will need to specify
+a base url in your config.</p>
+<p>For example:</p>
+<pre><code class="lang-YAML"><div class="highlight"><pre><span class="l-Scalar-Plain">base_url</span><span class="p-Indicator">:</span> <span class="s">&#39;http://mysite.com/docs/&#39;</span>
+
+<span class="c1"># Alternatively you can also just specify a base path.</span>
+<span class="l-Scalar-Plain">base_url</span><span class="p-Indicator">:</span> <span class="s">&#39;/docs/&#39;</span>
+</pre></div>
+
+</code></pre>
+<p>This is prepended to all url&#39;s when your run <code>enfield publish</code>. Enfield will also change any links or images in your markdown to respect this. Basically, you shouldn&#39;t have to change any of your content.</p>
+<h2 id="custom-template-variables">Custom template variables</h2><p>If you would like to have any custom variables exposed to your theme&#39;s template just add it to your config. Any keys besides the ones used by Enfield directly will be provided to your theme for use.</p>
+<p>If you do this in your config:</p>
+<pre><code class="lang-YAML"><div class="highlight"><pre><span class="l-Scalar-Plain">github_link</span><span class="p-Indicator">:</span> <span class="s">&#39;http://github.com/johndoe/repo-name/&#39;</span>
+<span class="l-Scalar-Plain">twitter_link &#39;http://twitter.com/johndoe&#39;</span>
+</pre></div>
+
+</code></pre>
+<p>You can use these in your theme by doing:</p>
+<pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;ul&gt;</span>
+<span class="x">    &lt;li&gt;&lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">site.github_link</span> <span class="cp">}}</span><span class="x">&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;</span>
+<span class="x">    &lt;li&gt;&lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">site.twitter_link</span> <span class="cp">}}</span><span class="x">&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;</span>
+<span class="x">&lt;/ul&gt;</span>
 </pre></div>
 
 </code></pre>
@@ -193,13 +200,13 @@ a base url in your config. This is prepended to all url&#39;s when your run <cod
                 
                     <div class="pagination__item pagination__item--previous">
                         <div class="pagination__item-label">Previous</div>
-                        <a href=/enfield-docs/setup-usage/command-line-options/>Command Line Options</a>
+                        <a href=/enfield-docs/quick-start/>Quick Start</a>
                     </div>
                 
                 
                     <div class="pagination__item pagination__item--next">
                         <div class="pagination__item-label">Next</div>
-                        <a href=/enfield-docs/themes/creating-a-theme/>Creating A Theme</a>
+                        <a href=/enfield-docs/setup-usage/command-line-options/>Command Line Options</a>
                     </div>
                 
             </div>
