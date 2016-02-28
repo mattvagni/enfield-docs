@@ -21,3 +21,4 @@ pages:
 # This is a list of files or folders you'd like to manually include in your build.
 include:
     - favicon.ico
+    - downloads/

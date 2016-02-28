@@ -7,7 +7,7 @@ In order for Enfield to know how to build your site you'll need to specify a `.y
 
 Your config can be called whatever you like. The default that Enfield will look like is `config.yml` in the root of your project.
 
-You will also need a theme. You can [download a sample theme from github](TODO) to get going for now and paste it into your project.
+You will also need a theme. You can [download a sample theme](/downloads/sample-theme.zip) to get going for now and paste it into your project.
 
 Additionally you'll need some markdown files. These too can be anywhere you like.
 
