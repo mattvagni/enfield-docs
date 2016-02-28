@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Enfield</title>
+    <title>Template Variables | Enfield</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/enfield-docs/styles.css" media="screen">
 </head>
@@ -11,7 +11,7 @@
 
     <div class="layout__header-bar">
         <div class="layout__header-bar-content">
-            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield v</a>
+            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield</a>
         </div>
     </div>
 
@@ -93,8 +93,26 @@
                                 <ul class="headings-submenu">
                                     
                                         <li class="headings-submenu__item">
-                                            <a href="/enfield-docs/themes/template-variables/#menusections-object" class="headings-submenu__link">
-                                                menuSections Object
+                                            <a href="/enfield-docs/themes/template-variables/#page-data" class="headings-submenu__link">
+                                                Page Data
+                                            </a>
+                                        </li>
+                                    
+                                        <li class="headings-submenu__item">
+                                            <a href="/enfield-docs/themes/template-variables/#pagination-data" class="headings-submenu__link">
+                                                Pagination Data
+                                            </a>
+                                        </li>
+                                    
+                                        <li class="headings-submenu__item">
+                                            <a href="/enfield-docs/themes/template-variables/#menu-data" class="headings-submenu__link">
+                                                Menu Data
+                                            </a>
+                                        </li>
+                                    
+                                        <li class="headings-submenu__item">
+                                            <a href="/enfield-docs/themes/template-variables/#custom-variables" class="headings-submenu__link">
+                                                Custom Variables
                                             </a>
                                         </li>
                                     
@@ -111,8 +129,122 @@
         <div class="layout__content">
             <h1>Template Variables</h1>
 
-            <p>It&#39;s probably easiest to just look at the sample theme to get see what&#39;s going on.</p>
-<h2 id="menusections-object">menuSections Object</h2><p>The menu variables are as follows:</p>
+            <p>This page describes how you</p>
+<h2 id="page-data">Page Data</h2><p>This is an example bit of template of how you include your page&#39;s data in your template:</p>
+<pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x">&lt;/h1&gt;</span>
+<span class="cp">{%</span> <span class="k">if</span> <span class="nv">page.headings</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;p&gt;Table of Contents:&lt;/p&gt;</span>
+<span class="x">    &lt;ul&gt;</span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">heading</span> <span class="k">in</span> <span class="nv">page.headings</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">            &lt;li class=&quot;level-</span><span class="cp">{{</span> <span class="nv">anchor.level</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">                &lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">heading.anchor</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">                    </span><span class="cp">{{</span> <span class="nv">heading.heading</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">                &lt;/a&gt;</span>
+<span class="x">            &lt;/li&gt;</span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;/ul&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="c">{# Notice the use of the safe filter below. It ensures</span>
+<span class="c">our page content (which is html) is not escaped #}</span><span class="x"></span>
+<span class="cp">{{</span> <span class="nv">page.content</span><span class="o">|</span><span class="nf">safe</span> <span class="cp">}}</span><span class="x"></span>
+</pre></div>
+
+</code></pre>
+<p>The raw data the current page is:</p>
+<pre><code class="lang-js"><div class="highlight"><pre><span class="p">{</span> <span class="s2">&quot;page&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Template Variables&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;section&quot;</span><span class="o">:</span> <span class="s2">&quot;Themes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;/the-page-url/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;content&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;p&gt;Your page&#39;s html&lt;/p&gt;&quot;</span><span class="p">,</span>
+
+    <span class="c1">// The headings/titles within the page (h1 &amp; h2s only)</span>
+    <span class="s2">&quot;headings&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;level&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;anchor&quot;</span><span class="o">:</span> <span class="s2">&quot;/themes/template-variables/#menusections-object&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;heading&quot;</span><span class="o">:</span> <span class="s2">&quot;menuSections Object&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}}</span>
+</pre></div>
+
+</code></pre>
+<h2 id="pagination-data">Pagination Data</h2><p>This is an example of template of how you could implement pagination for each page to the next &amp; previous</p>
+<pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;div&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">pagination.previousPage</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;div class=&quot;pagination prev&quot;&gt;</span>
+<span class="x">            &lt;a href=</span><span class="cp">{{</span> <span class="nv">pagination.previousPage.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">&gt;</span>
+<span class="x">                Prev: </span><span class="cp">{{</span><span class="nv">pagination.previousPage.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">            &lt;/a&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">pagination.nextPage</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;div class=&quot;pagination next&quot;&gt;</span>
+<span class="x">            &lt;a href=</span><span class="cp">{{</span> <span class="nv">pagination.nextPage.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">&gt;</span>
+<span class="x">                Next: </span><span class="cp">{{</span><span class="nv">pagination.nextPage.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">            &lt;/a&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;/div&gt;</span>
+</pre></div>
+
+</code></pre>
+<p>The raw data for the pagination data is:</p>
+<pre><code class="lang-js"><div class="highlight"><pre><span class="p">{</span> <span class="s2">&quot;pagination&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="c1">// Both the previous and next page can be empty if there is no</span>
+    <span class="c1">// previous or next page.</span>
+    <span class="s2">&quot;previousPage&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="c1">// The previous page&#39;s title</span>
+        <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Command Line Options&quot;</span><span class="p">,</span>
+        <span class="c1">// The previous page&#39;s url</span>
+        <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;/setup-usage/command-line-options/&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;nextPage&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="c1">// The next page&#39;s title</span>
+        <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Template Variables&quot;</span><span class="p">,</span>
+        <span class="c1">// The next page&#39;s url</span>
+        <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;/themes/template-variables/&quot;</span>
+    <span class="p">}</span>
+<span class="p">}}</span>
+</pre></div>
+
+</code></pre>
+<h2 id="menu-data">Menu Data</h2><p>This is an example bit of templating of how you could implement a template. All css classes are obviously omited for readability.</p>
+<pre><code class="lang-jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">menuSection</span> <span class="k">in</span> <span class="nv">menuSections</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">menuSection.title</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;li&gt;</span>
+<span class="x">            </span><span class="cp">{{</span> <span class="nv">menuSection.title</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">        &lt;/li&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">page</span> <span class="k">in</span> <span class="nv">menuSection.pages</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;li&gt;</span>
+<span class="x">            &lt;a  href=&quot;</span><span class="cp">{{</span> <span class="nv">page.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">&quot;</span>
+<span class="x">                class=&quot;</span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">menuItem.isActive</span> <span class="cp">%}</span><span class="x">active</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x">&quot;&gt;</span>
+<span class="x">                </span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">            &lt;/a&gt;</span>
+
+<span class="x">            </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">page.headings</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">                &lt;ul&gt;</span>
+<span class="x">                    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">heading</span> <span class="k">in</span> <span class="nv">page.headings</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">                        &lt;li&gt;</span>
+<span class="x">                            &lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">heading.anchor</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">                                </span><span class="cp">{{</span> <span class="nv">heading.heading</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">                            &lt;/a&gt;</span>
+<span class="x">                        &lt;/li&gt;</span>
+<span class="x">                    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">                &lt;/ul&gt;</span>
+<span class="x">            </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;/li&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+</code></pre>
+<p>The raw data given to templates for the menu is:</p>
 <pre><code class="lang-js"><div class="highlight"><pre><span class="p">{</span> <span class="s2">&quot;menuSection&quot;</span><span class="o">:</span> <span class="p">[{</span>
     <span class="c1">// This is the title of this section,</span>
     <span class="c1">// this can be an empty string if a page is not in a section.</span>
@@ -160,37 +292,9 @@
 </pre></div>
 
 </code></pre>
-<p>So for example, a menu could be as simple as:</p>
-<pre><code class="lang-jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">menuSection</span> <span class="k">in</span> <span class="nv">menuSections</span> <span class="cp">%}</span><span class="x"></span>
-
-<span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">menuSection.title</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">        &lt;li&gt;</span>
-<span class="x">            </span><span class="cp">{{</span> <span class="nv">menuSection.title</span> <span class="cp">}}</span><span class="x"></span>
-<span class="x">        &lt;/li&gt;</span>
-<span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-
-<span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">page</span> <span class="k">in</span> <span class="nv">menuSection.pages</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">        &lt;li&gt;</span>
-<span class="x">            &lt;a  href=&quot;</span><span class="cp">{{</span> <span class="nv">page.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">&quot;</span>
-<span class="x">                class=&quot;</span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">menuItem.isActive</span> <span class="cp">%}</span><span class="x">active</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x">&quot;&gt;</span>
-<span class="x">                </span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x"></span>
-<span class="x">            &lt;/a&gt;</span>
-
-<span class="x">            </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">page.headings</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">                &lt;ul class=&quot;headings-submenu&quot;&gt;</span>
-<span class="x">                    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">heading</span> <span class="k">in</span> <span class="nv">page.headings</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">                        &lt;li&gt;</span>
-<span class="x">                            &lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">heading.anchor</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
-<span class="x">                                </span><span class="cp">{{</span> <span class="nv">heading.heading</span> <span class="cp">}}</span><span class="x"></span>
-<span class="x">                            &lt;/a&gt;</span>
-<span class="x">                        &lt;/li&gt;</span>
-<span class="x">                    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">                &lt;/ul&gt;</span>
-<span class="x">            </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">        &lt;/li&gt;</span>
-<span class="x">    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
-
-<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<h2 id="custom-variables">Custom Variables</h2><p>Any custom data included in the config file will also be exposed to the theme template.</p>
+<p>For example, if in the config the use defined <code>twitter_link</code> then it can be used in the template like so:</p>
+<pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">site.twitter_link</span> <span class="cp">}}</span><span class="x">&quot;&gt;Follow Me Twitter&lt;/a&gt;</span>
 </pre></div>
 
 </code></pre>

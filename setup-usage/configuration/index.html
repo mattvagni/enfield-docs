@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Enfield</title>
+    <title>Configuration | Enfield</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/enfield-docs/styles.css" media="screen">
 </head>
@@ -11,7 +11,7 @@
 
     <div class="layout__header-bar">
         <div class="layout__header-bar-content">
-            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield v</a>
+            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield</a>
         </div>
     </div>
 
@@ -66,7 +66,7 @@
                                     
                                         <li class="headings-submenu__item">
                                             <a href="/enfield-docs/setup-usage/configuration/#images-amp-static-assets" class="headings-submenu__link">
-                                                Images &amp;amp; static assets
+                                                Images &amp; static assets
                                             </a>
                                         </li>
                                     
@@ -131,9 +131,8 @@
 
             <p>For enfield to work you need to have <code>.yml</code> config file. It can be anywhere but by default enfield will look for a file called <code>config.yml</code> in your root.</p>
 <p>These are the basic config options.</p>
-<pre><code class="lang-YAML"><div class="highlight"><pre><span class="c1"># This is the title of your site.</span>
-<span class="c1"># This is most commonly used as the &lt;title&gt; of your site and for logging.</span>
-<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&#39;Your</span><span class="nv"> </span><span class="s">Site\&#39;</span><span class="l-Scalar-Plain">s Name&#39;</span>
+<pre><code class="lang-YAML"><div class="highlight"><pre><span class="c1"># The title of your site, most commonly used in the &lt;title&gt; tag.</span>
+<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&#39;Your</span><span class="nv"> </span><span class="s">Sites</span><span class="nv"> </span><span class="s">Title&#39;</span>
 
 <span class="c1"># This is the folder to your theme.</span>
 <span class="l-Scalar-Plain">theme</span><span class="p-Indicator">:</span> <span class="s">&#39;theme/&#39;</span>
@@ -181,16 +180,15 @@ a base url in your config.</p>
 <p>This is prepended to all url&#39;s when your run <code>enfield publish</code>. Enfield will also change any links or images in your markdown to respect this. Basically, you shouldn&#39;t have to change any of your content.</p>
 <h2 id="custom-template-variables">Custom template variables</h2><p>If you would like to have any custom variables exposed to your theme&#39;s template just add it to your config. Any keys besides the ones used by Enfield directly will be provided to your theme for use.</p>
 <p>If you do this in your config:</p>
-<pre><code class="lang-YAML"><div class="highlight"><pre><span class="l-Scalar-Plain">github_link</span><span class="p-Indicator">:</span> <span class="s">&#39;http://github.com/johndoe/repo-name/&#39;</span>
-<span class="l-Scalar-Plain">twitter_link &#39;http://twitter.com/johndoe&#39;</span>
+<pre><code class="lang-YAML"><div class="highlight"><pre><span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&#39;Your</span><span class="nv"> </span><span class="s">Sites</span><span class="nv"> </span><span class="s">Name&#39;</span>
 </pre></div>
 
 </code></pre>
 <p>You can use these in your theme by doing:</p>
-<pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;ul&gt;</span>
-<span class="x">    &lt;li&gt;&lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">site.github_link</span> <span class="cp">}}</span><span class="x">&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;</span>
-<span class="x">    &lt;li&gt;&lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">site.twitter_link</span> <span class="cp">}}</span><span class="x">&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;</span>
-<span class="x">&lt;/ul&gt;</span>
+<pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;head&gt;</span>
+<span class="x">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span class="x">    &lt;title&gt;</span><span class="cp">{{</span> <span class="nv">site.title</span> <span class="cp">}}</span><span class="x">&lt;/title&gt;</span>
+<span class="x">&lt;/head&gt;</span>
 </pre></div>
 
 </code></pre>
