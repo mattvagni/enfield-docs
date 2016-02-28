@@ -9,7 +9,7 @@ base_url: '/enfield-docs/'
 
 # These are the pages in the order and section's you'd like.
 pages:
-    - What is Enfield?: 'docs/home.md'
+    - Introduction: 'docs/introduction.md'
     - Quick Start: 'docs/quick-start.md'
     - Setup & Usage:
         - Configuration: 'docs/configuration.md'
@@ -18,6 +18,6 @@ pages:
         - Creating A Theme: 'docs/creating-a-theme.md'
         - Template Variables: 'docs/template-variables.md'
 
-# These are files or folders you want to manually include
+# This is a list of files or folders you'd like to manually include in your build.
 include:
-    - 'images/'
+    - favicon.ico

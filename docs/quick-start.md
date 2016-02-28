@@ -27,13 +27,12 @@ title: 'Animals.js'
 theme: 'theme/'
 pages:
     - Introductions: 'docs/home.md'
-    - Mammals:
-        - How Dogs Work: 'docs/dogs.md'
-        - How To Setup a Cat: 'docs/cats.md'
+    - How Dogs Work: 'docs/dogs.md'
+    - How To Setup a Cat: 'docs/cats.md'
 ```
 For each page you have to specify the location of the markdown file that corresponds to that page.
 
-If you want to break up your pages in sections you can just nest a list of pages like above ("Mammals" is the section title).
+If you want to break up your pages in sections you can check out the [full configuration options](/setup-usage/configuration/).
 
 To see what it looks like, run:
 ```bash

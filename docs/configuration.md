@@ -29,7 +29,7 @@ pages:
 ```
 Pages can only go one level deep like above.
 
-_Important:_ Enfield will parse your markdown and expose any h1 & h2s to your theme so you can have in-page anchors to your headings.
+_Important:_ Enfield will automatically parse each of your page's content and expose any h1 & h2s to your theme so you can have in-page anchors to your headings. You don't have to do anything for this to happen.
 
 ## Images & static assets
 If you would like to include some files additionally to the one your theme specifies you can define a list of files to copy over to the root of your built site.
@@ -60,12 +60,9 @@ If you would like to have any custom variables exposed to your theme's template 
 
 If you do this in your config:
 ```YAML
-title: 'Your Sites Name'
+twitter_url: 'Your Sites Name'
 ```
 You can use these in your theme by doing:
 ```jinja
-<head>
-    <meta charset="UTF-8">
-    <title>{{ site.title }}</title>
-</head>
+<a href="{{ site.twitter_url }}">Follow Me On Twitter</a>
 ```

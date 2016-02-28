@@ -7,7 +7,7 @@ You specify where the theme you'd like to use in your config.
 ## Defining a template
 Your theme must define a file called `template.html` this is the template that is used to render your site. Every page is rendered using the same template.
 
-Templates are rendered using Mozilla's [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) as a template language. This is nearly identical to what Jekyll uses with some slight differences in terms of what filters are available etc. In fact it's a port of jinja-to-js
+Templates are rendered using Mozilla's [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) as a template language. This is nearly identical to what Jekyll uses with some slight differences in terms of what filters are available etc.
 
 If you want to see an example template check out the [sample theme](https://github.com/mattvagni/enfield-docs/tree/master/theme)
 

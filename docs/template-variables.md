@@ -1,7 +1,7 @@
-This page describes how you
+This page describes what data you have available in your theme's template to create your site.
 
-## Page Data
-This is an example bit of template of how you include your page's data in your template:
+## The Page
+This is an example bit of template of how you include the page in your template:
 ```jinja
 <h1>{{ page.title }}</h1>
 {% if page.headings %}
@@ -40,48 +40,8 @@ The raw data the current page is:
 }}
 ```
 
-## Pagination Data
-This is an example of template of how you could implement pagination for each page to the next & previous
-```jinja
-<div>
-    {% if pagination.previousPage %}
-        <div class="pagination prev">
-            <a href={{ pagination.previousPage.url|url }}>
-                Prev: {{pagination.previousPage.title}}
-            </a>
-        </div>
-    {% endif %}
-    {% if pagination.nextPage %}
-        <div class="pagination next">
-            <a href={{ pagination.nextPage.url|url }}>
-                Next: {{pagination.nextPage.title}}
-            </a>
-        </div>
-    {% endif %}
-</div>
-```
-The raw data for the pagination data is:
-```js
-{ "pagination": {
-    // Both the previous and next page can be empty if there is no
-    // previous or next page.
-    "previousPage": {
-        // The previous page's title
-        "title": "Command Line Options",
-        // The previous page's url
-        "url": "/setup-usage/command-line-options/"
-    },
-    "nextPage": {
-        // The next page's title
-        "title": "Template Variables",
-        // The next page's url
-        "url": "/themes/template-variables/"
-    }
-}}
-```
-
-## Menu Data
-This is an example bit of templating of how you could implement a template. All css classes are obviously omited for readability.
+## The Menu
+This is an example bit of template of how you could implement a menu. All css classes are obviously omited for readability.
 ```jinja
 {% for menuSection in menuSections %}
 
@@ -115,9 +75,9 @@ This is an example bit of templating of how you could implement a template. All 
 {% endfor %}
 ```
 
-The raw data given to templates for the menu is:
+The raw data given to the template for the menu is:
 ```js
-{ "menuSection": [{
+{ "menuSections": [{
     // This is the title of this section,
     // this can be an empty string if a page is not in a section.
     "title": "Section Title",
@@ -132,8 +92,9 @@ The raw data given to templates for the menu is:
             "title": "The Page Title",
             // The url of this page:
             "url": "/",
-            // The headings/titles within the page:
-            // (This can be empty if the page has no titles)
+
+            // The headings/titles within the page: h1, h2 etc...
+            // (This can be empty if the page has no titles obviously.)
             "headings": [
                 {
 
@@ -161,6 +122,46 @@ The raw data given to templates for the menu is:
     ]
 },
 // ... any other sections in the menu
+```
+
+## Pagination
+This is an example of template of how you could implement pagination for each page to the next & previous page.
+```jinja
+<div>
+    {% if pagination.previousPage %}
+        <div class="pagination prev">
+            <a href={{ pagination.previousPage.url|url }}>
+                Prev: {{pagination.previousPage.title}}
+            </a>
+        </div>
+    {% endif %}
+    {% if pagination.nextPage %}
+        <div class="pagination next">
+            <a href={{ pagination.nextPage.url|url }}>
+                Next: {{pagination.nextPage.title}}
+            </a>
+        </div>
+    {% endif %}
+</div>
+```
+The raw data for pagination is:
+```js
+{ "pagination": {
+    // Both the previous and next page can be empty if there is no
+    // previous or next page.
+    "previousPage": {
+        // The previous page's title
+        "title": "Command Line Options",
+        // The previous page's url
+        "url": "/setup-usage/command-line-options/"
+    },
+    "nextPage": {
+        // The next page's title
+        "title": "Template Variables",
+        // The next page's url
+        "url": "/themes/template-variables/"
+    }
+}}
 ```
 
 ## Custom Variables

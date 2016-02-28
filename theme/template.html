@@ -36,11 +36,13 @@
                             {% if page.isActive and page.headings %}
                                 <ul class="headings-submenu">
                                     {% for heading in page.headings %}
-                                        <li class="headings-submenu__item">
-                                            <a href="{{ heading.anchor|url }}" class="headings-submenu__link">
-                                                {{ heading.heading }}
-                                            </a>
-                                        </li>
+                                        {% if heading.level < 3 %}
+                                            <li class="headings-submenu__item">
+                                                <a href="{{ heading.anchor|url }}" class="headings-submenu__link">
+                                                    {{ heading.heading }}
+                                                </a>
+                                            </li>
+                                        {% endif %}
                                     {% endfor %}
                                 </ul>
                             {% endif %}
@@ -52,29 +54,36 @@
         </div>
 
 
-        <div class="layout__content">
-            <h1>{{ page.title }}</h1>
+        <div class="layout__content-wrapper">
 
-            {{ page.content|safe }}
+            <div class="layout__content">
+                <h1>{{ page.title }}</h1>
 
-            <div class="pagination">
-                {% if pagination.previousPage %}
-                    <div class="pagination__item pagination__item--previous">
-                        <div class="pagination__item-label">Previous</div>
-                        <a href={{ pagination.previousPage.url|url }}>{{pagination.previousPage.title}}</a>
-                    </div>
-                {% endif %}
-                {% if pagination.nextPage %}
-                    <div class="pagination__item pagination__item--next">
-                        <div class="pagination__item-label">Next</div>
-                        <a href={{ pagination.nextPage.url|url }}>{{pagination.nextPage.title}}</a>
-                    </div>
-                {% endif %}
+                {{ page.content|safe }}
+
+                <div class="pagination">
+                    {% if pagination.previousPage %}
+                        <div class="pagination__item pagination__item--previous">
+                            <div class="pagination__item-label">Previous</div>
+                            <a href={{ pagination.previousPage.url|url }}>{{pagination.previousPage.title}}</a>
+                        </div>
+                    {% endif %}
+                    {% if pagination.nextPage %}
+                        <div class="pagination__item pagination__item--next">
+                            <div class="pagination__item-label">Next</div>
+                            <a href={{ pagination.nextPage.url|url }}>{{pagination.nextPage.title}}</a>
+                        </div>
+                    {% endif %}
+                </div>
             </div>
+
+            <div class="layout__content-footer">
+                These docs were written using <a href="TODO">Enfield</a>.
+            </div>
+
         </div>
 
     </div>
-
 
 </div>
 </body>
