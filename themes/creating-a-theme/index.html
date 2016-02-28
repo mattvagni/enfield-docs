@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>Creating A Theme | Enfield</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/enfield-docs/styles.css" media="screen">
+    <link rel="stylesheet" href="/styles.css" media="screen">
 </head>
 <body>
 <div class="layout">
 
     <div class="layout__header-bar">
         <div class="layout__header-bar-content">
-            <a href="/enfield-docs/" class="layout__header-bar-logo">Enfield</a>
+            <a href="/" class="layout__header-bar-logo">Enfield</a>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/" class="menu-items__link ">
+                            <a href="/" class="menu-items__link ">
                                 What is Enfield?
                             </a>
 
@@ -33,7 +33,7 @@
                         </li>
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/quick-start/" class="menu-items__link ">
+                            <a href="/quick-start/" class="menu-items__link ">
                                 Quick Start
                             </a>
 
@@ -51,7 +51,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/setup-usage/configuration/" class="menu-items__link ">
+                            <a href="/setup-usage/configuration/" class="menu-items__link ">
                                 Configuration
                             </a>
 
@@ -59,7 +59,7 @@
                         </li>
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/setup-usage/command-line-options/" class="menu-items__link ">
+                            <a href="/setup-usage/command-line-options/" class="menu-items__link ">
                                 Command Line Options
                             </a>
 
@@ -77,7 +77,7 @@
 
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/themes/creating-a-theme/" class="menu-items__link ">
+                            <a href="/themes/creating-a-theme/" class="menu-items__link ">
                                 Creating A Theme
                             </a>
 
@@ -85,19 +85,19 @@
                                 <ul class="headings-submenu">
                                     
                                         <li class="headings-submenu__item">
-                                            <a href="/enfield-docs/themes/creating-a-theme/#defining-a-template" class="headings-submenu__link">
+                                            <a href="/themes/creating-a-theme/#defining-a-template" class="headings-submenu__link">
                                                 Defining a template
                                             </a>
                                         </li>
                                     
                                         <li class="headings-submenu__item">
-                                            <a href="/enfield-docs/themes/creating-a-theme/#static-files" class="headings-submenu__link">
+                                            <a href="/themes/creating-a-theme/#static-files" class="headings-submenu__link">
                                                 Static files
                                             </a>
                                         </li>
                                     
                                         <li class="headings-submenu__item">
-                                            <a href="/enfield-docs/themes/creating-a-theme/#urls-in-your-theme" class="headings-submenu__link">
+                                            <a href="/themes/creating-a-theme/#urls-in-your-theme" class="headings-submenu__link">
                                                 Urls in your theme
                                             </a>
                                         </li>
@@ -107,7 +107,7 @@
                         </li>
                     
                         <li class="menu-items__item menu-items__page">
-                            <a href="/enfield-docs/themes/template-variables/" class="menu-items__link ">
+                            <a href="/themes/template-variables/" class="menu-items__link ">
                                 Template Variables
                             </a>
 
@@ -129,7 +129,7 @@
 <h2 id="defining-a-template">Defining a template</h2><p>Your theme must define a file called <code>template.html</code> this is the template that is used to render your site. Every page is rendered using the same template.</p>
 <p>Templates are rendered using Mozilla&#39;s <a href="https://mozilla.github.io/nunjucks/templating.html" title="null">Nunjucks</a> as a template language. This is nearly identical to what Jekyll uses with some slight differences in terms of what filters are available etc. In fact it&#39;s a port of jinja-to-js</p>
 <p>If you want to see an example template check out the <a href="https://github.com/mattvagni/enfield-docs/tree/master/theme" title="null">sample theme</a></p>
-<p>To see what data you have available in your template check out the available <a href="/enfield-docs/themes/template-variables/" title="null">template variables</a>.</p>
+<p>To see what data you have available in your template check out the available <a href="/themes/template-variables/" title="null">template variables</a>.</p>
 <h2 id="static-files">Static files</h2><p>Any files besides the template in your theme are copied over in the same folder structure to the root of your built site.</p>
 <p>So if your theme folder looks like so:</p>
 <pre><code class="lang-bash"><div class="highlight"><pre>theme/
@@ -156,13 +156,13 @@
                 
                     <div class="pagination__item pagination__item--previous">
                         <div class="pagination__item-label">Previous</div>
-                        <a href=/enfield-docs/setup-usage/command-line-options/>Command Line Options</a>
+                        <a href=/setup-usage/command-line-options/>Command Line Options</a>
                     </div>
                 
                 
                     <div class="pagination__item pagination__item--next">
                         <div class="pagination__item-label">Next</div>
-                        <a href=/enfield-docs/themes/template-variables/>Template Variables</a>
+                        <a href=/themes/template-variables/>Template Variables</a>
                     </div>
                 
             </div>
