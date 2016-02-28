@@ -26,7 +26,7 @@
                     
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/" class="menu-items__link ">
-                                What is Enfield?
+                                Introduction
                             </a>
 
                             
@@ -102,10 +102,12 @@
         </div>
 
 
-        <div class="layout__content">
-            <h1>Quick Start</h1>
+        <div class="layout__content-wrapper">
 
-            <p>First, install Enfield:</p>
+            <div class="layout__content">
+                <h1>Quick Start</h1>
+
+                <p>First, install Enfield:</p>
 <pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span>npm install -g enfield
 </pre></div>
 
@@ -129,14 +131,13 @@
 <span class="l-Scalar-Plain">theme</span><span class="p-Indicator">:</span> <span class="s">&#39;theme/&#39;</span>
 <span class="l-Scalar-Plain">pages</span><span class="p-Indicator">:</span>
     <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Introductions</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/home.md&#39;</span>
-    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Mammals</span><span class="p-Indicator">:</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">How Dogs Work</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/dogs.md&#39;</span>
-        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">How To Setup a Cat</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/cats.md&#39;</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">How Dogs Work</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/dogs.md&#39;</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">How To Setup a Cat</span><span class="p-Indicator">:</span> <span class="s">&#39;docs/cats.md&#39;</span>
 </pre></div>
 
 </code></pre>
 <p>For each page you have to specify the location of the markdown file that corresponds to that page.</p>
-<p>If you want to break up your pages in sections you can just nest a list of pages like above (&quot;Mammals&quot; is the section title).</p>
+<p>If you want to break up your pages in sections you can check out the <a href="/enfield-docs/setup-usage/configuration/" title="null">full configuration options</a>.</p>
 <p>To see what it looks like, run:</p>
 <pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span>enfield --serve --watch
 </pre></div>
@@ -145,24 +146,29 @@
 <p>This will watch for file changes and rebuild your site as you make changes.</p>
 
 
-            <div class="pagination">
-                
-                    <div class="pagination__item pagination__item--previous">
-                        <div class="pagination__item-label">Previous</div>
-                        <a href=/enfield-docs/>What is Enfield?</a>
-                    </div>
-                
-                
-                    <div class="pagination__item pagination__item--next">
-                        <div class="pagination__item-label">Next</div>
-                        <a href=/enfield-docs/setup-usage/configuration/>Configuration</a>
-                    </div>
-                
+                <div class="pagination">
+                    
+                        <div class="pagination__item pagination__item--previous">
+                            <div class="pagination__item-label">Previous</div>
+                            <a href=/enfield-docs/>Introduction</a>
+                        </div>
+                    
+                    
+                        <div class="pagination__item pagination__item--next">
+                            <div class="pagination__item-label">Next</div>
+                            <a href=/enfield-docs/setup-usage/configuration/>Configuration</a>
+                        </div>
+                    
+                </div>
             </div>
+
+            <div class="layout__content-footer">
+                These docs were written using <a href="TODO">Enfield</a>.
+            </div>
+
         </div>
 
     </div>
-
 
 </div>
 </body>

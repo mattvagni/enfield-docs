@@ -26,7 +26,7 @@
                     
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/" class="menu-items__link ">
-                                What is Enfield?
+                                Introduction
                             </a>
 
                             
@@ -92,29 +92,37 @@
                             
                                 <ul class="headings-submenu">
                                     
-                                        <li class="headings-submenu__item">
-                                            <a href="/enfield-docs/themes/template-variables/#page-data" class="headings-submenu__link">
-                                                Page Data
-                                            </a>
-                                        </li>
+                                        
+                                            <li class="headings-submenu__item">
+                                                <a href="/enfield-docs/themes/template-variables/#the-page" class="headings-submenu__link">
+                                                    The Page
+                                                </a>
+                                            </li>
+                                        
                                     
-                                        <li class="headings-submenu__item">
-                                            <a href="/enfield-docs/themes/template-variables/#pagination-data" class="headings-submenu__link">
-                                                Pagination Data
-                                            </a>
-                                        </li>
+                                        
+                                            <li class="headings-submenu__item">
+                                                <a href="/enfield-docs/themes/template-variables/#the-menu" class="headings-submenu__link">
+                                                    The Menu
+                                                </a>
+                                            </li>
+                                        
                                     
-                                        <li class="headings-submenu__item">
-                                            <a href="/enfield-docs/themes/template-variables/#menu-data" class="headings-submenu__link">
-                                                Menu Data
-                                            </a>
-                                        </li>
+                                        
+                                            <li class="headings-submenu__item">
+                                                <a href="/enfield-docs/themes/template-variables/#pagination" class="headings-submenu__link">
+                                                    Pagination
+                                                </a>
+                                            </li>
+                                        
                                     
-                                        <li class="headings-submenu__item">
-                                            <a href="/enfield-docs/themes/template-variables/#custom-variables" class="headings-submenu__link">
-                                                Custom Variables
-                                            </a>
-                                        </li>
+                                        
+                                            <li class="headings-submenu__item">
+                                                <a href="/enfield-docs/themes/template-variables/#custom-variables" class="headings-submenu__link">
+                                                    Custom Variables
+                                                </a>
+                                            </li>
+                                        
                                     
                                 </ul>
                             
@@ -126,11 +134,13 @@
         </div>
 
 
-        <div class="layout__content">
-            <h1>Template Variables</h1>
+        <div class="layout__content-wrapper">
 
-            <p>This page describes how you</p>
-<h2 id="page-data">Page Data</h2><p>This is an example bit of template of how you include your page&#39;s data in your template:</p>
+            <div class="layout__content">
+                <h1>Template Variables</h1>
+
+                <p>This page describes what data you have available in your theme&#39;s template to create your site.</p>
+<h2 id="the-page">The Page</h2><p>This is an example bit of template of how you include the page in your template:</p>
 <pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x">&lt;/h1&gt;</span>
 <span class="cp">{%</span> <span class="k">if</span> <span class="nv">page.headings</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    &lt;p&gt;Table of Contents:&lt;/p&gt;</span>
@@ -170,47 +180,7 @@
 </pre></div>
 
 </code></pre>
-<h2 id="pagination-data">Pagination Data</h2><p>This is an example of template of how you could implement pagination for each page to the next &amp; previous</p>
-<pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;div&gt;</span>
-<span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">pagination.previousPage</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">        &lt;div class=&quot;pagination prev&quot;&gt;</span>
-<span class="x">            &lt;a href=</span><span class="cp">{{</span> <span class="nv">pagination.previousPage.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">&gt;</span>
-<span class="x">                Prev: </span><span class="cp">{{</span><span class="nv">pagination.previousPage.title</span><span class="cp">}}</span><span class="x"></span>
-<span class="x">            &lt;/a&gt;</span>
-<span class="x">        &lt;/div&gt;</span>
-<span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">pagination.nextPage</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">        &lt;div class=&quot;pagination next&quot;&gt;</span>
-<span class="x">            &lt;a href=</span><span class="cp">{{</span> <span class="nv">pagination.nextPage.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">&gt;</span>
-<span class="x">                Next: </span><span class="cp">{{</span><span class="nv">pagination.nextPage.title</span><span class="cp">}}</span><span class="x"></span>
-<span class="x">            &lt;/a&gt;</span>
-<span class="x">        &lt;/div&gt;</span>
-<span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">&lt;/div&gt;</span>
-</pre></div>
-
-</code></pre>
-<p>The raw data for the pagination data is:</p>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="p">{</span> <span class="s2">&quot;pagination&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="c1">// Both the previous and next page can be empty if there is no</span>
-    <span class="c1">// previous or next page.</span>
-    <span class="s2">&quot;previousPage&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="c1">// The previous page&#39;s title</span>
-        <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Command Line Options&quot;</span><span class="p">,</span>
-        <span class="c1">// The previous page&#39;s url</span>
-        <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;/setup-usage/command-line-options/&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;nextPage&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="c1">// The next page&#39;s title</span>
-        <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Template Variables&quot;</span><span class="p">,</span>
-        <span class="c1">// The next page&#39;s url</span>
-        <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;/themes/template-variables/&quot;</span>
-    <span class="p">}</span>
-<span class="p">}}</span>
-</pre></div>
-
-</code></pre>
-<h2 id="menu-data">Menu Data</h2><p>This is an example bit of templating of how you could implement a template. All css classes are obviously omited for readability.</p>
+<h2 id="the-menu">The Menu</h2><p>This is an example bit of template of how you could implement a menu. All css classes are obviously omited for readability.</p>
 <pre><code class="lang-jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">menuSection</span> <span class="k">in</span> <span class="nv">menuSections</span> <span class="cp">%}</span><span class="x"></span>
 
 <span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">menuSection.title</span> <span class="cp">%}</span><span class="x"></span>
@@ -244,8 +214,8 @@
 </pre></div>
 
 </code></pre>
-<p>The raw data given to templates for the menu is:</p>
-<pre><code class="lang-js"><div class="highlight"><pre><span class="p">{</span> <span class="s2">&quot;menuSection&quot;</span><span class="o">:</span> <span class="p">[{</span>
+<p>The raw data given to the template for the menu is:</p>
+<pre><code class="lang-js"><div class="highlight"><pre><span class="p">{</span> <span class="s2">&quot;menuSections&quot;</span><span class="o">:</span> <span class="p">[{</span>
     <span class="c1">// This is the title of this section,</span>
     <span class="c1">// this can be an empty string if a page is not in a section.</span>
     <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Section Title&quot;</span><span class="p">,</span>
@@ -260,8 +230,9 @@
             <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;The Page Title&quot;</span><span class="p">,</span>
             <span class="c1">// The url of this page:</span>
             <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
-            <span class="c1">// The headings/titles within the page:</span>
-            <span class="c1">// (This can be empty if the page has no titles)</span>
+
+            <span class="c1">// The headings/titles within the page: h1, h2 etc...</span>
+            <span class="c1">// (This can be empty if the page has no titles obviously.)</span>
             <span class="s2">&quot;headings&quot;</span><span class="o">:</span> <span class="p">[</span>
                 <span class="p">{</span>
 
@@ -292,6 +263,46 @@
 </pre></div>
 
 </code></pre>
+<h2 id="pagination">Pagination</h2><p>This is an example of template of how you could implement pagination for each page to the next &amp; previous page.</p>
+<pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;div&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">pagination.previousPage</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;div class=&quot;pagination prev&quot;&gt;</span>
+<span class="x">            &lt;a href=</span><span class="cp">{{</span> <span class="nv">pagination.previousPage.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">&gt;</span>
+<span class="x">                Prev: </span><span class="cp">{{</span><span class="nv">pagination.previousPage.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">            &lt;/a&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">pagination.nextPage</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;div class=&quot;pagination next&quot;&gt;</span>
+<span class="x">            &lt;a href=</span><span class="cp">{{</span> <span class="nv">pagination.nextPage.url</span><span class="o">|</span><span class="nf">url</span> <span class="cp">}}</span><span class="x">&gt;</span>
+<span class="x">                Next: </span><span class="cp">{{</span><span class="nv">pagination.nextPage.title</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">            &lt;/a&gt;</span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;/div&gt;</span>
+</pre></div>
+
+</code></pre>
+<p>The raw data for pagination is:</p>
+<pre><code class="lang-js"><div class="highlight"><pre><span class="p">{</span> <span class="s2">&quot;pagination&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="c1">// Both the previous and next page can be empty if there is no</span>
+    <span class="c1">// previous or next page.</span>
+    <span class="s2">&quot;previousPage&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="c1">// The previous page&#39;s title</span>
+        <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Command Line Options&quot;</span><span class="p">,</span>
+        <span class="c1">// The previous page&#39;s url</span>
+        <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;/setup-usage/command-line-options/&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;nextPage&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="c1">// The next page&#39;s title</span>
+        <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Template Variables&quot;</span><span class="p">,</span>
+        <span class="c1">// The next page&#39;s url</span>
+        <span class="s2">&quot;url&quot;</span><span class="o">:</span> <span class="s2">&quot;/themes/template-variables/&quot;</span>
+    <span class="p">}</span>
+<span class="p">}}</span>
+</pre></div>
+
+</code></pre>
 <h2 id="custom-variables">Custom Variables</h2><p>Any custom data included in the config file will also be exposed to the theme template.</p>
 <p>For example, if in the config the use defined <code>twitter_link</code> then it can be used in the template like so:</p>
 <pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">site.twitter_link</span> <span class="cp">}}</span><span class="x">&quot;&gt;Follow Me Twitter&lt;/a&gt;</span>
@@ -300,19 +311,24 @@
 </code></pre>
 
 
-            <div class="pagination">
-                
-                    <div class="pagination__item pagination__item--previous">
-                        <div class="pagination__item-label">Previous</div>
-                        <a href=/enfield-docs/themes/creating-a-theme/>Creating A Theme</a>
-                    </div>
-                
-                
+                <div class="pagination">
+                    
+                        <div class="pagination__item pagination__item--previous">
+                            <div class="pagination__item-label">Previous</div>
+                            <a href=/enfield-docs/themes/creating-a-theme/>Creating A Theme</a>
+                        </div>
+                    
+                    
+                </div>
             </div>
+
+            <div class="layout__content-footer">
+                These docs were written using <a href="TODO">Enfield</a>.
+            </div>
+
         </div>
 
     </div>
-
 
 </div>
 </body>

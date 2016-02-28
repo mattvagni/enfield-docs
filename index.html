@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>What is Enfield? | Enfield</title>
+    <title>Introduction | Enfield</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/enfield-docs/styles.css" media="screen">
 </head>
@@ -26,11 +26,27 @@
                     
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/" class="menu-items__link ">
-                                What is Enfield?
+                                Introduction
                             </a>
 
                             
                                 <ul class="headings-submenu">
+                                    
+                                        
+                                            <li class="headings-submenu__item">
+                                                <a href="/enfield-docs/#example" class="headings-submenu__link">
+                                                    Example
+                                                </a>
+                                            </li>
+                                        
+                                    
+                                        
+                                            <li class="headings-submenu__item">
+                                                <a href="/enfield-docs/#installation" class="headings-submenu__link">
+                                                    Installation
+                                                </a>
+                                            </li>
+                                        
                                     
                                 </ul>
                             
@@ -102,21 +118,23 @@
         </div>
 
 
-        <div class="layout__content">
-            <h1>What is Enfield?</h1>
+        <div class="layout__content-wrapper">
 
-            <p>Enfield is a static-site generator based on pages, it&#39;s designed for docs.</p>
+            <div class="layout__content">
+                <h1>Introduction</h1>
+
+                <p>Enfield is a static-site generator based on pages, it&#39;s designed for docs.</p>
 <p>With Enfield you can:</p>
 <ul>
 <li>Write your docs in markdown</li>
 <li>Manually order your pages &amp; organize them into sections</li>
-<li>Completely customize your docs with your own theme.</li>
-<li>Publish to Github Pages in one command.</li>
+<li>Completely customize your docs with your own theme</li>
+<li>Easily publish to github pages or anywhere else. </li>
 </ul>
-<p>Enfield also parses your markdown pages and exposes any titles to your theme so that you can offer in page menus to your different parts within a page.</p>
-<p>Like with any other static site generator, you can deploy it to basically anything since the output is just a bunch of static files.</p>
-<p>These docs are generated using enfield, <a href="https://github.com/mattvagni/enfield-docs" title="null">check it out on Github</a>.</p>
-<h3 id="installation">Installation</h3><p>Assuming you already have node and npm installed:</p>
+<p>Additionally Enfield also parses the content of each of your pages and exposes all titles to your theme so you can help the user navigate within each page using <code>#anchor</code> links.</p>
+<p>Naturally Enfield supports code highlight (via <a href="http://pygments.org/" title="null">Pygments</a>) &amp; the inclusion of any static files (such as images etc.)</p>
+<h2 id="example">Example</h2><p>These docs are generated using Enfield, see what they look like on <a href="https://github.com/mattvagni/enfield-docs" title="null">on Github</a>.</p>
+<h2 id="installation">Installation</h2><p>Assuming you already have node and npm installed:</p>
 <pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span>npm install -g enfield
 </pre></div>
 
@@ -124,19 +142,24 @@
 <p>You don&#39;t have to install it globally but this is probably the easiest option if you just want to try it out.</p>
 
 
-            <div class="pagination">
-                
-                
-                    <div class="pagination__item pagination__item--next">
-                        <div class="pagination__item-label">Next</div>
-                        <a href=/enfield-docs/quick-start/>Quick Start</a>
-                    </div>
-                
+                <div class="pagination">
+                    
+                    
+                        <div class="pagination__item pagination__item--next">
+                            <div class="pagination__item-label">Next</div>
+                            <a href=/enfield-docs/quick-start/>Quick Start</a>
+                        </div>
+                    
+                </div>
             </div>
+
+            <div class="layout__content-footer">
+                These docs were written using <a href="TODO">Enfield</a>.
+            </div>
+
         </div>
 
     </div>
-
 
 </div>
 </body>

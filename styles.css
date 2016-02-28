@@ -84,7 +84,7 @@ body {
     background: #f9f9f9;
 }
 
-p {
+p, ul, ol {
     margin-bottom: 1.3em;
 }
 
@@ -185,11 +185,25 @@ em {
     padding: 0 40px 0 0;
 }
 
-.layout__content {
+.layout__content-wrapper {
     width: 700px;
     float: left;
+}
+
+.layout__content {
     padding: 40px;
     background: #FFF;
+}
+
+.layout__content-footer {
+    margin-top: 50px;
+    color: #AAA;
+    font-weight: 400;
+    text-align: center;
+}
+
+.layout__content-footer a {
+    color: #AAA;
 }
 
 

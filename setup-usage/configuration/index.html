@@ -26,7 +26,7 @@
                     
                         <li class="menu-items__item menu-items__page">
                             <a href="/enfield-docs/" class="menu-items__link ">
-                                What is Enfield?
+                                Introduction
                             </a>
 
                             
@@ -58,29 +58,37 @@
                             
                                 <ul class="headings-submenu">
                                     
-                                        <li class="headings-submenu__item">
-                                            <a href="/enfield-docs/setup-usage/configuration/#subpages-sections" class="headings-submenu__link">
-                                                Subpages/sections
-                                            </a>
-                                        </li>
+                                        
+                                            <li class="headings-submenu__item">
+                                                <a href="/enfield-docs/setup-usage/configuration/#subpages-sections" class="headings-submenu__link">
+                                                    Subpages/sections
+                                                </a>
+                                            </li>
+                                        
                                     
-                                        <li class="headings-submenu__item">
-                                            <a href="/enfield-docs/setup-usage/configuration/#images-amp-static-assets" class="headings-submenu__link">
-                                                Images &amp; static assets
-                                            </a>
-                                        </li>
+                                        
+                                            <li class="headings-submenu__item">
+                                                <a href="/enfield-docs/setup-usage/configuration/#images-amp-static-assets" class="headings-submenu__link">
+                                                    Images &amp; static assets
+                                                </a>
+                                            </li>
+                                        
                                     
-                                        <li class="headings-submenu__item">
-                                            <a href="/enfield-docs/setup-usage/configuration/#changing-the-base-url" class="headings-submenu__link">
-                                                Changing the base url
-                                            </a>
-                                        </li>
+                                        
+                                            <li class="headings-submenu__item">
+                                                <a href="/enfield-docs/setup-usage/configuration/#changing-the-base-url" class="headings-submenu__link">
+                                                    Changing the base url
+                                                </a>
+                                            </li>
+                                        
                                     
-                                        <li class="headings-submenu__item">
-                                            <a href="/enfield-docs/setup-usage/configuration/#custom-template-variables" class="headings-submenu__link">
-                                                Custom template variables
-                                            </a>
-                                        </li>
+                                        
+                                            <li class="headings-submenu__item">
+                                                <a href="/enfield-docs/setup-usage/configuration/#custom-template-variables" class="headings-submenu__link">
+                                                    Custom template variables
+                                                </a>
+                                            </li>
+                                        
                                     
                                 </ul>
                             
@@ -126,10 +134,12 @@
         </div>
 
 
-        <div class="layout__content">
-            <h1>Configuration</h1>
+        <div class="layout__content-wrapper">
 
-            <p>For enfield to work you need to have <code>.yml</code> config file. It can be anywhere but by default enfield will look for a file called <code>config.yml</code> in your root.</p>
+            <div class="layout__content">
+                <h1>Configuration</h1>
+
+                <p>For enfield to work you need to have <code>.yml</code> config file. It can be anywhere but by default enfield will look for a file called <code>config.yml</code> in your root.</p>
 <p>These are the basic config options.</p>
 <pre><code class="lang-YAML"><div class="highlight"><pre><span class="c1"># The title of your site, most commonly used in the &lt;title&gt; tag.</span>
 <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&#39;Your</span><span class="nv"> </span><span class="s">Sites</span><span class="nv"> </span><span class="s">Title&#39;</span>
@@ -157,7 +167,7 @@ You can do this by nesting pages like so:</p>
 
 </code></pre>
 <p>Pages can only go one level deep like above.</p>
-<p><em>Important:</em> Enfield will parse your markdown and expose any h1 &amp; h2s to your theme so you can have in-page anchors to your headings.</p>
+<p><em>Important:</em> Enfield will automatically parse each of your page&#39;s content and expose any h1 &amp; h2s to your theme so you can have in-page anchors to your headings. You don&#39;t have to do anything for this to happen.</p>
 <h2 id="images-amp-static-assets">Images &amp; static assets</h2><p>If you would like to include some files additionally to the one your theme specifies you can define a list of files to copy over to the root of your built site.</p>
 <p>For example:</p>
 <pre><code class="lang-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">include</span><span class="p-Indicator">:</span>
@@ -180,38 +190,40 @@ a base url in your config.</p>
 <p>This is prepended to all url&#39;s when your run <code>enfield publish</code>. Enfield will also change any links or images in your markdown to respect this. Basically, you shouldn&#39;t have to change any of your content.</p>
 <h2 id="custom-template-variables">Custom template variables</h2><p>If you would like to have any custom variables exposed to your theme&#39;s template just add it to your config. Any keys besides the ones used by Enfield directly will be provided to your theme for use.</p>
 <p>If you do this in your config:</p>
-<pre><code class="lang-YAML"><div class="highlight"><pre><span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&#39;Your</span><span class="nv"> </span><span class="s">Sites</span><span class="nv"> </span><span class="s">Name&#39;</span>
+<pre><code class="lang-YAML"><div class="highlight"><pre><span class="l-Scalar-Plain">twitter_url</span><span class="p-Indicator">:</span> <span class="s">&#39;Your</span><span class="nv"> </span><span class="s">Sites</span><span class="nv"> </span><span class="s">Name&#39;</span>
 </pre></div>
 
 </code></pre>
 <p>You can use these in your theme by doing:</p>
-<pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;head&gt;</span>
-<span class="x">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
-<span class="x">    &lt;title&gt;</span><span class="cp">{{</span> <span class="nv">site.title</span> <span class="cp">}}</span><span class="x">&lt;/title&gt;</span>
-<span class="x">&lt;/head&gt;</span>
+<pre><code class="lang-jinja"><div class="highlight"><pre><span class="x">&lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">site.twitter_url</span> <span class="cp">}}</span><span class="x">&quot;&gt;Follow Me On Twitter&lt;/a&gt;</span>
 </pre></div>
 
 </code></pre>
 
 
-            <div class="pagination">
-                
-                    <div class="pagination__item pagination__item--previous">
-                        <div class="pagination__item-label">Previous</div>
-                        <a href=/enfield-docs/quick-start/>Quick Start</a>
-                    </div>
-                
-                
-                    <div class="pagination__item pagination__item--next">
-                        <div class="pagination__item-label">Next</div>
-                        <a href=/enfield-docs/setup-usage/command-line-options/>Command Line Options</a>
-                    </div>
-                
+                <div class="pagination">
+                    
+                        <div class="pagination__item pagination__item--previous">
+                            <div class="pagination__item-label">Previous</div>
+                            <a href=/enfield-docs/quick-start/>Quick Start</a>
+                        </div>
+                    
+                    
+                        <div class="pagination__item pagination__item--next">
+                            <div class="pagination__item-label">Next</div>
+                            <a href=/enfield-docs/setup-usage/command-line-options/>Command Line Options</a>
+                        </div>
+                    
+                </div>
             </div>
+
+            <div class="layout__content-footer">
+                These docs were written using <a href="TODO">Enfield</a>.
+            </div>
+
         </div>
 
     </div>
-
 
 </div>
 </body>
