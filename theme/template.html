@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ site_title }}</title>
+    <title>{{ page.title}} | {{ title }}</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/styles.css'|url }}" media="screen">
 </head>
@@ -11,7 +11,7 @@
 
     <div class="layout__header-bar">
         <div class="layout__header-bar-content">
-            <a href="{{ ''|url }}" class="layout__header-bar-logo">{{ title }}</a>
+            <a href="{{ '/'|url }}" class="layout__header-bar-logo">{{ title }}</a>
         </div>
     </div>
 
@@ -19,25 +19,25 @@
 
         <div class="layout__menu">
             <ul class="menu-items">
-                {% for menuItem in menuItems %}
+                {% for menuSection in menuSections %}
 
-                    {% if menuItem.isSectionTitle %}
+                    {% if menuSection.title %}
                         <li class="menu-items__item menu-items__section-title">
-                            {{ menuItem.title }}
+                            {{ menuSection.title }}
                         </li>
                     {% endif %}
 
-                    {% if menuItem.isPage %}
+                    {% for page in menuSection.pages %}
                         <li class="menu-items__item menu-items__page">
-                            <a href="{{ menuItem.url|url }}" class="menu-items__link {% if menuItem.isActive %}menu-items__link--active{% endif %}">
-                                {{ menuItem.title }}
+                            <a href="{{ page.url|url }}" class="menu-items__link {% if menuItem.isActive %}menu-items__link--active{% endif %}">
+                                {{ page.title }}
                             </a>
 
-                            {% if menuItem.isActive and menuItem.headings %}
+                            {% if page.isActive and page.headings %}
                                 <ul class="headings-submenu">
-                                    {% for heading in menuItem.headings %}
+                                    {% for heading in page.headings %}
                                         <li class="headings-submenu__item">
-                                            <a href="{{ heading.anchor }}" class="headings-submenu__link">
+                                            <a href="{{ heading.anchor|url }}" class="headings-submenu__link">
                                                 {{ heading.heading }}
                                             </a>
                                         </li>
@@ -45,7 +45,7 @@
                                 </ul>
                             {% endif %}
                         </li>
-                    {% endif %}
+                    {% endfor %}
 
                 {% endfor %}
             </ul>
@@ -54,6 +54,7 @@
 
         <div class="layout__content">
             <h1>{{ page.title }}</h1>
+
             {{ page.content|safe }}
 
             <div class="pagination">

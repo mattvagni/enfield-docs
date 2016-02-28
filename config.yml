@@ -1,12 +1,23 @@
+# The title of your site
 title: 'Enfield'
+
+# This is the theme which species where the template for your site/docs.
 theme: 'theme/'
+
+# This is the base_url because we are publishing this to: http://mattvagni.github.io/enfield-docs/
 base_url: '/enfield-docs/'
+
+# These are the pages in the order and section's you'd like.
 pages:
     - What is Enfield?: 'docs/home.md'
     - Quick Start: 'docs/quick-start.md'
     - Setup & Usage:
+        - Configuration: 'docs/configuration.md'
         - Command Line Options: 'docs/cli-options.md'
-        - Configuration: 'docs/config.md'
     - Themes:
         - Creating A Theme: 'docs/creating-a-theme.md'
         - Template Variables: 'docs/template-variables.md'
+
+# These are files or folders you want to manually include
+include:
+    - 'images/'
