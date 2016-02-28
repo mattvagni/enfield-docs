@@ -1,4 +1,4 @@
-For enfield to work you need to have `.yml` config file. It can be anywhere but by default enfield will look for a file called `config.yml` in your root.
+For Hoxton to work you need to have `.yml` config file. It can be anywhere but by default Hoxton will look for a file called `config.yml` in your root.
 
 These are the basic config options.
 
@@ -29,7 +29,7 @@ pages:
 ```
 Pages can only go one level deep like above.
 
-_Important:_ Enfield will automatically parse each of your page's content and expose any h1 & h2s to your theme so you can have in-page anchors to your headings. You don't have to do anything for this to happen.
+_Important:_ Hoxton will automatically parse each of your page's content and expose any h1 & h2s to your theme so you can have in-page anchors to your headings. You don't have to do anything for this to happen.
 
 ## Images & static assets
 If you would like to include some files additionally to the one your theme specifies you can define a list of files to copy over to the root of your built site.
@@ -53,10 +53,10 @@ base_url: 'http://mysite.com/docs/'
 # Alternatively you can also just specify a base path.
 base_url: '/docs/'
 ```
-This is prepended to all url's when your run `enfield publish`. Enfield will also change any links or images in your markdown to respect this. Basically, you shouldn't have to change any of your content.
+This is prepended to all url's when your run `hoxton publish`. Hoxton will also change any links or images in your markdown to respect this. Basically, you shouldn't have to change any of your content.
 
 ## Custom template variables
-If you would like to have any custom variables exposed to your theme's template just add it to your config. Any keys besides the ones used by Enfield directly will be provided to your theme for use.
+If you would like to have any custom variables exposed to your theme's template just add it to your config. Any keys besides the ones used by Hoxton directly will be provided to your theme for use.
 
 If you do this in your config:
 ```YAML

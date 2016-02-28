@@ -1,11 +1,11 @@
-First, install Enfield:
+First, install Hoxton:
 ```bash
-$ npm install -g enfield
+$ npm install -g hoxton
 ```
 
-In order for Enfield to know how to build your site you'll need to specify a `.yml` config file.
+In order for Hoxton to know how to build your site you'll need to specify a `.yml` config file.
 
-Your config can be called whatever you like. The default that Enfield will look like is `config.yml` in the root of your project.
+Your config can be called whatever you like. The default that Hoxton will look like is `config.yml` in the root of your project.
 
 You will also need a theme. You can [download a sample theme](/downloads/sample-theme.zip) to get going for now and paste it into your project.
 
@@ -36,6 +36,6 @@ If you want to break up your pages in sections you can check out the [full confi
 
 To see what it looks like, run:
 ```bash
-$ enfield --serve --watch
+$ hoxton --serve --watch
 ```
 This will watch for file changes and rebuild your site as you make changes.

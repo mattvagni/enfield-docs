@@ -1,11 +1,11 @@
 # The title of your site
-title: 'Enfield'
+title: 'Hoxton'
 
 # This is the theme which species where the template for your site/docs.
 theme: 'theme/'
 
-# This is the base_url because we are publishing this to: http://mattvagni.github.io/enfield-docs/
-base_url: '/enfield-docs/'
+# This is the base_url because we are publishing this to: http://mattvagni.github.io/hoxton-docs/
+base_url: '/hoxton-docs/'
 
 # These are the pages in the order and section's you'd like.
 pages:
