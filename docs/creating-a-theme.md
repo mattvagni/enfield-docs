@@ -9,7 +9,7 @@ Your theme must define a file called `template.html` this is the template that i
 
 Templates are rendered using Mozilla's [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) as a template language. This is nearly identical to what Jekyll uses with some slight differences in terms of what filters are available etc.
 
-If you want to see an example template check out the [sample theme](/downloads/sample-theme/)
+If you want to see an example template check out the [sample theme](/downloads/sample-theme.zip)
 
 To see what data you have available in your template check out the available [template variables](/themes/template-variables/).
 
